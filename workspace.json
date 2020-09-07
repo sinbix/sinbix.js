@@ -1,6 +1,34 @@
 {
   "version": 1,
-  "projects": {},
+  "projects": {
+    "packages-schematics": {
+      "root": "libs/packages/schematics",
+      "sourceRoot": "libs/packages/schematics/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/packages/schematics/tsconfig.lib.json",
+              "libs/packages/schematics/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/packages/schematics/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/packages/schematics/jest.config.js",
+            "tsConfig": "libs/packages/schematics/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "defaultCollection": "@nrwl/workspace"
   }
