@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "@schematics/angular"
+  ],
+  "schematics": {
+    "package": {
+      "aliases": [
+        "pack"
+      ],
+      "description": "Add package",
+      "factory": "./ng-g/feature",
+      "schema": "./ng-g/feature/schema.json"
+    }
+  }
+}
