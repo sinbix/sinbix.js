@@ -1,6 +1,6 @@
 module.exports = {
-  name: 'packages-schematics',
-  preset: '../../../jest.config.js',
+  name: 'schematics',
+  preset: '../../jest.config.js',
   globals: {
     'ts-jest': {
       tsConfig: '<rootDir>/tsconfig.spec.json',
@@ -10,5 +10,5 @@ module.exports = {
     '^.+\\.[tj]sx?$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'html'],
-  coverageDirectory: '../../../coverage/libs/packages/schematics',
+  coverageDirectory: '../../coverage/libs/schematics',
 };

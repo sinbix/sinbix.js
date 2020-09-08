@@ -17,6 +17,7 @@
     "affected:lint": "nx affected:lint",
     "affected:dep-graph": "nx affected:dep-graph",
     "affected": "nx affected",
+    "build:schematics": "yarn --cwd libs/schematics run build",
     "format": "nx format:write",
     "format:write": "nx format:write",
     "format:check": "nx format:check",

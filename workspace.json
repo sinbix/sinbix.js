@@ -1,9 +1,9 @@
 {
   "version": 1,
   "projects": {
-    "packages-schematics": {
-      "root": "libs/packages/schematics",
-      "sourceRoot": "libs/packages/schematics/src",
+    "schematics": {
+      "root": "libs/schematics",
+      "sourceRoot": "libs/schematics/src",
       "projectType": "library",
       "schematics": {},
       "architect": {
@@ -12,17 +12,20 @@
           "options": {
             "linter": "eslint",
             "tsConfig": [
-              "libs/packages/schematics/tsconfig.lib.json",
-              "libs/packages/schematics/tsconfig.spec.json"
+              "libs/schematics/tsconfig.lib.json",
+              "libs/schematics/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/packages/schematics/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/schematics/**/*"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/packages/schematics/jest.config.js",
-            "tsConfig": "libs/packages/schematics/tsconfig.spec.json",
+            "jestConfig": "libs/schematics/jest.config.js",
+            "tsConfig": "libs/schematics/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }

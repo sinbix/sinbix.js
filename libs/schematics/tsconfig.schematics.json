@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "outDir": "../../dist/out-tsc/schematics",
+    "declaration": true,
+    "rootDir": "./src"
+  },
+  "exclude": ["**/*.spec.ts", "**/*/files/**/*"]
+}

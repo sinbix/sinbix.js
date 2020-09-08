@@ -1,0 +1,9 @@
+{
+  "name": "akita-schematics",
+  "version": "0.0.1",
+  "private": true,
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "yarn run tsc -p tsconfig.schematics.json"
+  }
+}

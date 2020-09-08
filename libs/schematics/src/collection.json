@@ -8,8 +8,8 @@
         "pack"
       ],
       "description": "Add package",
-      "factory": "./ng-g/feature",
-      "schema": "./ng-g/feature/schema.json"
+      "factory": "./package",
+      "schema": "./package/schema.json"
     }
   }
 }
