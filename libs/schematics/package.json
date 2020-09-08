@@ -4,6 +4,12 @@
   "private": true,
   "license": "Apache-2.0",
   "scripts": {
-    "build": "yarn run tsc -p tsconfig.schematics.json"
+    "prebuild": "yarn run clean",
+    "build": "yarn run tsc -p tsconfig.schematics.json",
+    "postbuild": "yarn run copy:build && yarn run copy:json && yarn run copy:files",
+    "clean": "yarn run rimraf ../../dist/libs/schematics",
+    "copy:build": "yarn run copyfiles -u 5 \"../../dist/out-tsc/schematics/**/*\"  ../../dist/libs/schematics",
+    "copy:files": "yarn run copyfiles -u 1 \"src/**/files/**/*\" ../../dist/libs/schematics",
+    "copy:json": "yarn run copyfiles -u 1 \"src/**/*.json\" ../../dist/libs/schematics"
   }
 }
