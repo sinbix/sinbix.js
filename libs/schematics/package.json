@@ -1,5 +1,5 @@
 {
-  "name": "akita-schematics",
+  "name": "@sinibx/schematics",
   "version": "0.0.1",
   "private": true,
   "license": "Apache-2.0",
