@@ -167,6 +167,50 @@
           }
         }
       }
+    },
+    "packages-ngx-ui": {
+      "projectType": "library",
+      "root": "libs/packages/ngx-ui",
+      "sourceRoot": "libs/packages/ngx-ui/src",
+      "prefix": "sinbix",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/packages/ngx-ui/tsconfig.lib.json",
+            "project": "libs/packages/ngx-ui/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/packages/ngx-ui/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/packages/ngx-ui/tsconfig.lib.json",
+              "libs/packages/ngx-ui/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/packages/ngx-ui/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/packages/ngx-ui/jest.config.js",
+            "tsConfig": "libs/packages/ngx-ui/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/packages/ngx-ui/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

@@ -31,6 +31,9 @@
     "demo/frontend-e2e": {
       "tags": [],
       "implicitDependencies": ["demo-frontend"]
+    },
+    "packages-ngx-ui": {
+      "tags": []
     }
   }
 }
