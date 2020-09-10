@@ -1,13 +1,7 @@
-import {
-  Injectable,
-  Inject
-} from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { Stylizer } from './stylizer.service';
 import { DOCUMENT } from '@angular/common';
-import {
-  IStylizer,
-  IStyles
-} from './stylizer.model';
+import { IStylizer, IStyles } from './stylizer.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,15 +10,14 @@ export class BodyStylizer implements IStylizer {
   private readonly body: HTMLElement;
 
   constructor(
-    private commonStyleControl: Stylizer,
-    @Inject(DOCUMENT)
-    private document: Document
+    private stylizer: Stylizer,
+    @Inject(DOCUMENT) private document: any
   ) {
     this.body = document.body;
   }
 
   setStyle(style: string, value: string) {
-    this.commonStyleControl.setStyle(
+    this.stylizer.setStyle(
       this.body,
       style,
       value
@@ -32,49 +25,49 @@ export class BodyStylizer implements IStylizer {
   }
 
   removeStyle(style: string) {
-    this.commonStyleControl.removeStyle(
+    this.stylizer.removeStyle(
       this.body,
       style
     );
   }
 
   setStyles(styles: IStyles) {
-    this.commonStyleControl.setStyles(
+    this.stylizer.setStyles(
       this.body,
       styles
     );
   }
 
   removeStyles(styles: string[]) {
-    this.commonStyleControl.removeStyles(
+    this.stylizer.removeStyles(
       this.body,
       styles
     );
   }
 
   addClass(name: string) {
-    this.commonStyleControl.addClass(
+    this.stylizer.addClass(
       this.body,
       name
     );
   }
 
   removeClass(name: string) {
-    this.commonStyleControl.removeClass(
+    this.stylizer.removeClass(
       this.body,
       name
     );
   }
 
   addClasses(names: string[]) {
-    this.commonStyleControl.addClasses(
+    this.stylizer.addClasses(
       this.body,
       names
     );
   }
 
   removeClasses(names: string[]) {
-    this.commonStyleControl.removeClasses(
+    this.stylizer.removeClasses(
       this.body,
       names
     );

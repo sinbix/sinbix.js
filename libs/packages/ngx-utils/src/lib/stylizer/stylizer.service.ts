@@ -1,7 +1,7 @@
 import * as _ from 'lodash';
 import { Injectable } from '@angular/core';
-import { IStylizer, IStyles } from './stylizer.model';
 import { GlobalRenderer } from '@sinbix/ngx-utils/renderer';
+import { IStylizer, IStyles } from './stylizer.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +9,7 @@ import { GlobalRenderer } from '@sinbix/ngx-utils/renderer';
 export class Stylizer implements IStylizer {
   private renderer = this.globalRenderer.renderer;
 
-  constructor(
-    private globalRenderer: GlobalRenderer
-  ) {
+  constructor(private globalRenderer: GlobalRenderer) {
   }
 
   setStyle(el: any, style: string, value) {
@@ -43,25 +41,25 @@ export class Stylizer implements IStylizer {
   }
 
   addClasses(el: any, names: string | string[]) {
-    if (_.isArray(names)) {
-      names.map((name) => {
-        this.addClass(el, name);
-      });
-    } else {
-      this.addClass(el, names);
-    }
+    // if (_.isArray(names)) {
+    //   names.map((name) => {
+    //     this.addClass(el, name);
+    //   });
+    // } else {
+    //   this.addClass(el, names);
+    // }
   }
 
   removeClasses(
     el: any,
     names: string | string[]
   ) {
-    if (_.isArray(names)) {
-      names.map((name) => {
-        this.removeClass(el, name);
-      });
-    } else {
-      this.removeClass(el, names);
-    }
+    // if (_.isArray(names)) {
+    //   names.map((name) => {
+    //     this.removeClass(el, name);
+    //   });
+    // } else {
+    //   this.removeClass(el, names);
+    // }
   }
 }

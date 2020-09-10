@@ -17,7 +17,8 @@
     "baseUrl": ".",
     "paths": {
       "@sinbix/ngx-utils": ["libs/packages/ngx-utils/src/index.ts"],
-      "@sinbix/ngx-utils/*": ["libs/packages/ngx-utils/src/lib/*"]
+      "@sinbix/ngx-utils/*": ["libs/packages/ngx-utils/src/lib/*"],
+      "@sinbix/ngx-utils/renderer": ["libs/packages/ngx-utils/src/lib/renderer"]
     }
   },
   "exclude": ["node_modules", "tmp"]
