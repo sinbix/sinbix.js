@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@sinbix/ngx-utils": ["libs/packages/ngx-utils/src/index.ts"]
+      "@sinbix/ngx-utils": ["libs/packages/ngx-utils/src/index.ts"],
+      "@sinbix/ngx-utils/*": ["libs/packages/ngx-utils/src/lib/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

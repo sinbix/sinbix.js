@@ -24,6 +24,13 @@
   "projects": {
     "packages-ngx-utils": {
       "tags": []
+    },
+    "demo-frontend": {
+      "tags": []
+    },
+    "demo/frontend-e2e": {
+      "tags": [],
+      "implicitDependencies": ["demo-frontend"]
     }
   }
 }
