@@ -1,0 +1,29 @@
+@mixin sui-general() {
+  /*----------------------------------------------------------------*/
+  /*  @ Text rendering & box sizing
+  /*----------------------------------------------------------------*/
+  * {
+    box-sizing: border-box;
+
+    &:before, &:after {
+      box-sizing: border-box;
+    }
+
+    // Remove focus outline
+    &:focus {
+      outline: none !important;
+    }
+  }
+  // -----------------------------------------------------------------------------------------------------
+  // @ Responsive images
+  // -----------------------------------------------------------------------------------------------------
+
+  img {
+    vertical-align: top;
+    border: none;
+  }
+
+  input {
+    border: none;
+  }
+}

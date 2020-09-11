@@ -1,8 +1,12 @@
-/* You can add global scss to this file, and also import other style files */
+/* You can add global _scss to this file, and also import other style files */
 @import 'libs/packages/ngx-ui/theming';
 
 @include sui-core();
 
-body {
-  background: red;
+.red {
+  color: red;
+}
+
+.green {
+  background: green;
 }

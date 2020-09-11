@@ -1,102 +1,10 @@
+@import '_scss/breakpoints';
+@import '_scss/general';
+@import '_scss/layout';
+@import '_scss/normalize';
+
 @mixin sui-core() {
   @include sui-normalize();
   @include sui-general();
   @include sui-layout();
-}
-
-@mixin sui-normalize() {
-  @import '~normalize.css/normalize.css';
-}
-
-@mixin sui-general() {
-  /*----------------------------------------------------------------*/
-  /*  @ Text rendering & box sizing
-  /*----------------------------------------------------------------*/
-  * {
-    box-sizing: border-box;
-
-    &:before, &:after {
-      box-sizing: border-box;
-    }
-
-    // Remove focus outline
-    &:focus {
-      outline: none !important;
-    }
-  }
-  // -----------------------------------------------------------------------------------------------------
-  // @ Responsive images
-  // -----------------------------------------------------------------------------------------------------
-
-  img {
-    vertical-align: top;
-    border: none;
-  }
-
-  input {
-    border: none;
-  }
-}
-
-@mixin sui-layout() {
-  html, body {
-    min-height: 100%;
-  }
-
-  body {
-    overflow-x: hidden;
-  }
-}
-
-// Media step breakpoint mixin based on Angular Material lib
-$breakpoints: (
-  xs: 0,
-  sm: 600,
-  md: 960,
-  lg: 1280,
-  xl: 1920,
-);
-
-@mixin sui-lt-breakpoint($breakpoint) {
-  $value: map-get($breakpoints, $breakpoint);
-
-  @include sui-media-breakpoint(null, $value) {
-    @content;
-  }
-}
-
-@mixin sui-gt-breakpoint($breakpoint) {
-  $value: map-get($breakpoints, $breakpoint);
-
-  @include sui-media-breakpoint($value, null) {
-    @content;
-  }
-}
-
-@mixin sui-bw-breakpoint($minBreakpoint, $maxBreakpoint) {
-  $minValue: map-get($breakpoints, $minBreakpoint);
-  $maxValue: map-get($breakpoints, $maxBreakpoint);
-
-  @include sui-media-breakpoint($minValue, $maxValue) {
-    @content;
-  }
-}
-
-@mixin sui-media-breakpoint($min, $max) {
-  @if ($min or $max) {
-    $mediaQuery: 'screen';
-
-    @if ($min) {
-      $mediaQuery: $mediaQuery + ' and (min-width: ' + $min + 'px)';
-    }
-    @if ($max) {
-      $mediaQuery: $mediaQuery + ' and (max-width: ' + ($max - 1) + 'px)';
-    }
-
-    @media #{$mediaQuery} {
-      @content;
-    }
-  } @else {
-    @content;
-  }
 }

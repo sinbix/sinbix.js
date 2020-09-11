@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { LinkComponent } from './link/link.component';
+import { LinkComponent } from './link';
 
 
 
@@ -17,4 +17,4 @@ import { LinkComponent } from './link/link.component';
     LinkComponent
   ]
 })
-export class NavigationModule { }
+export class NgxUiNavigationModule { }

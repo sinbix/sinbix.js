@@ -29,6 +29,7 @@ export class LinkComponent implements OnInit {
     return this._activeClass;
   }
 
+
   @Input() set activeClass(value: string) {
     this._activeClass = value;
     this.changeActiveClasses();
