@@ -1,0 +1,100 @@
+@mixin fxLayout(
+  $dir: row,
+  $align: (
+    h: start,
+    v: stretch,
+  ),
+  $gap: false,
+  $wrap: false,
+  $grid: false
+) {
+  $horizontal: map-get(
+    $map: $align,
+    $key: 'h',
+  );
+  $vertical: map-get(
+    $map: $align,
+    $key: 'v',
+  );
+
+  @if ($wrap) {
+    flex-flow: $dir wrap;
+  } @else {
+    flex-direction: $dir;
+  }
+
+  @if ($gap) {
+    @if ($dir == row) {
+      @if ($grid) {
+        margin: 0 -#{$gap} -#{$gap} 0;
+
+        > * {
+          padding: 0 #{$gap} #{$gap} 0;
+        }
+      } @else {
+        > *:not(:last-child) {
+          margin-right: #{$gap};
+        }
+      }
+    } @else {
+      @if ($grid) {
+        margin: -#{$gap} 0 0 -#{$gap};
+
+        > * {
+          padding: #{$gap} 0 0 #{$gap};
+        }
+      } @else {
+        > *:not(:last-child) {
+          margin-bottom: #{$gap};
+        }
+      }
+    }
+  }
+
+  display: flex;
+
+  place-content: $vertical $horizontal;
+  align-items: $vertical;
+}
+
+@mixin fxLayoutAlign($horizontal: start, $vertical: stretch) {
+  place-content: $vertical $horizontal;
+  align-items: $vertical;
+}
+
+@mixin fxLayoutGap($gap: 0) {
+  margin: 0 -#{$gap} -#{$gap} 0;
+
+  > * {
+    padding: 0 #{$gap} #{$gap} 0;
+  }
+}
+
+@mixin fxFlex($width: 100) {
+  flex: 1 1 percentage($number: $width);
+}
+
+@mixin fxFill() {
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+@mixin fillSpaceAbsolute() {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@mixin fxFlex($width: 0) {
+  box-sizing: border-box;
+  @if ($width != 0) {
+    flex: 1 1 100%;
+    max-width: #{$width};
+  } @else {
+    flex: 1 1 0;
+  }
+}

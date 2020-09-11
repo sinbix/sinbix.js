@@ -34,6 +34,9 @@
     },
     "packages-ngx-ui": {
       "tags": []
+    },
+    "packages-utils": {
+      "tags": []
     }
   }
 }
