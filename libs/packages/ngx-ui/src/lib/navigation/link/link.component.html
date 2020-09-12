@@ -4,60 +4,60 @@
 
 <!-- item.url -->
 <a
-  class="nav-link"
   #ref
   *ngIf="url && !externalUrl && !function"
   [routerLink]="[url]"
-  [routerLinkActive]="activeClasses"
+  [routerLinkActive]="active"
   [routerLinkActiveOptions]="{ exact: exactMatch || false }"
   [target]="openInNewTab ? '_blank' : '_self'"
+  class="nav-link"
 >
   <ng-container *ngTemplateOutlet="content"></ng-container>
 </a>
 
 <!-- item.externalUrl -->
 <a
-  class="nav-link"
   #ref
   *ngIf="url && externalUrl && !function"
   [href]="url"
   [target]="openInNewTab ? '_blank' : '_self'"
+  class="nav-link"
 >
   <ng-container *ngTemplateOutlet="content"></ng-container>
 </a>
 
 <!-- item.function -->
-<a class="nav-link" #ref *ngIf="!url && function" (click)="function()">
+<a #ref *ngIf="!url && function" (click)="function()" class="nav-link">
   <ng-container *ngTemplateOutlet="content"></ng-container>
 </a>
 
 <!-- item.url && item.function -->
 <a
-  class="nav-link"
   #ref
   *ngIf="url && !externalUrl && function"
   (click)="function()"
   [routerLink]="[url]"
-  [routerLinkActive]="activeClasses"
+  [routerLinkActive]="active"
   [routerLinkActiveOptions]="{ exact: exactMatch || false }"
   [target]="openInNewTab ? '_blank' : '_self'"
+  class="nav-link"
 >
   <ng-container *ngTemplateOutlet="content"></ng-container>
 </a>
 
 <!-- item.externalUrl && item.function -->
 <a
-  class="nav-link"
   #ref
   *ngIf="url && externalUrl && function"
   (click)="function()"
   [href]="url"
   [target]="openInNewTab ? '_blank' : '_self'"
+  class="nav-link"
 >
   <ng-container *ngTemplateOutlet="content"></ng-container>
 </a>
 
 <!-- normal group -->
-<a #ref class="nav-link-group" *ngIf="!url && !function">
+<a class="nav-link-group" *ngIf="!url && !function" #ref>
   <ng-container *ngTemplateOutlet="content"></ng-container>
 </a>
