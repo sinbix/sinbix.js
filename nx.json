@@ -40,6 +40,9 @@
     },
     "packages-ngx-data-access": {
       "tags": []
+    },
+    "packages-ngx-data-access-akita": {
+      "tags": []
     }
   }
 }

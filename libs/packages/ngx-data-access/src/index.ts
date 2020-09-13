@@ -1,1 +1,1 @@
-export * from './lib/packages-ngx-data-access.module';
+export default {};

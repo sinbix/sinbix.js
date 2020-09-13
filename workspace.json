@@ -295,6 +295,53 @@
           "style": "scss"
         }
       }
+    },
+    "packages-ngx-data-access-akita": {
+      "projectType": "library",
+      "root": "libs/packages/ngx-data-access-akita",
+      "sourceRoot": "libs/packages/ngx-data-access-akita/src",
+      "prefix": "sinbix",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/packages/ngx-data-access-akita/tsconfig.lib.json",
+            "project": "libs/packages/ngx-data-access-akita/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/packages/ngx-data-access-akita/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/packages/ngx-data-access-akita/tsconfig.lib.json",
+              "libs/packages/ngx-data-access-akita/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/packages/ngx-data-access-akita/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/packages/ngx-data-access-akita/jest.config.js",
+            "tsConfig": "libs/packages/ngx-data-access-akita/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/packages/ngx-data-access-akita/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

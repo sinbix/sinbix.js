@@ -22,7 +22,13 @@
       "@sinbix/ngx-ui/*": ["libs/packages/ngx-ui/src/lib/*"],
       "@sinbix/utils": ["libs/packages/utils/src/index.ts"],
       "@sinbix/ngx-data-access": ["libs/packages/ngx-data-access/src/index.ts"],
-      "@sinbix/ngx-data-access/*": ["libs/packages/ngx-data-access/src/lib/*"]
+      "@sinbix/ngx-data-access/*": ["libs/packages/ngx-data-access/src/lib/*"],
+      "@sinbix/ngx-data-access-akita": [
+        "libs/packages/ngx-data-access-akita/src/index.ts"
+      ],
+      "@sinbix/ngx-data-access-akita/*": [
+        "libs/packages/ngx-data-access-akita/src/lib/*"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
