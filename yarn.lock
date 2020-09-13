@@ -1177,6 +1177,13 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@capacitor/core@^2.4.1":
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/@capacitor/core/-/core-2.4.1.tgz#d47db023d4b98fd62f8f829d2a046d0c1f0e5352"
+  integrity sha512-/OTDYTztAri04SNC+pIsSiIVG8ryjKkt3kG+aupoiHI1xankLJxGbcw5Z3aVZmhmMmJpk2nda2LC9Kc3Y0bA2w==
+  dependencies:
+    tslib "^1.9.0"
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@cnakazawa/watch/-/watch-1.0.4.tgz#f864ae85004d0fcab6f50be9141c4da368d1656a"
