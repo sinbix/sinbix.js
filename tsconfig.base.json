@@ -18,9 +18,6 @@
     "paths": {
       "@sinbix/ngx-utils": ["libs/packages/ngx-utils/src/index.ts"],
       "@sinbix/ngx-utils/*": ["libs/packages/ngx-utils/src/lib/*"],
-      "@sinbix/ngx-utils/renderer": [
-        "libs/packages/ngx-utils/src/lib/renderer"
-      ],
       "@sinbix/ngx-ui": ["libs/packages/ngx-ui/src/index.ts"],
       "@sinbix/ngx-ui/*": ["libs/packages/ngx-ui/src/lib/*"],
       "@sinbix/utils": ["libs/packages/utils/src/index.ts"]

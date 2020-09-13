@@ -9,6 +9,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { bunchHandler } from '@sinbix/utils';
+import { NavigationService } from '@sinbix/ngx-utils/navigation';
 
 @Component({
   selector: 'sui-nav-link',
@@ -26,10 +27,12 @@ export class LinkComponent implements OnInit {
 
   @Input() active: string | string[];
 
-  constructor(private renderer: Renderer2) {}
+  constructor(
+    private renderer: Renderer2,
+    private navigationService: NavigationService
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   @HostListener('mouseenter')
   mouseenter() {
@@ -42,7 +45,10 @@ export class LinkComponent implements OnInit {
 
   @HostListener('mouseleave')
   mouseleave() {
-    if (this.active) {
+    if (
+      this.active &&
+      !this.navigationService.isRouterLinkActive(this.url, this.exactMatch)
+    ) {
       bunchHandler(this.active, (cssClass) => {
         this.renderer.removeClass(this.linkElRef.nativeElement, cssClass);
       });

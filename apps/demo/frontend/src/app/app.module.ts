@@ -9,7 +9,10 @@ import { NgxUiNavigationModule } from '@sinbix/ngx-ui/navigation';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([], { initialNavigation: 'enabled' }),
+    RouterModule.forRoot([{
+      path: '**',
+      component: AppComponent
+    }]),
     NgxUiNavigationModule
   ],
   providers: [],
