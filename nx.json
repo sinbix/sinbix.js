@@ -37,6 +37,9 @@
     },
     "packages-utils": {
       "tags": []
+    },
+    "packages-ngx-data-access": {
+      "tags": []
     }
   }
 }
