@@ -1,13 +1,34 @@
-import { Injectable } from '@angular/core';
-import { StoreConfig, EntityState, ActiveState, EntityStore } from '@datorama/akita';
-import { ITheme } from './theme.model';
+import * as _ from 'lodash';
+import { NgModule, ModuleWithProviders } from '@angular/core';
+import { AStorageService } from '@sinbix/ngx-data-access/storage';
+import { IThemeOpts } from './theme-opts.model';
+import { THEME_DEFAULT_OPTS } from './theme-default-opts';
+import { ThemeService } from './theme.service';
+import { ThemeStore } from './theme.store';
+import { ThemeQuery } from './theme.query';
+import { THEME_OPTS_TOKEN } from './theme-opts.token';
 
-export interface ThemeState extends EntityState<ITheme>, ActiveState { }
+@NgModule()
+export class DataAccessThemeModule {
+  static forRoot(
+    opts?: IThemeOpts
+  ): ModuleWithProviders<DataAccessThemeModule> {
+    const themeOpts = _.merge(THEME_DEFAULT_OPTS, opts);
 
-@Injectable({ providedIn: 'root' })
-@StoreConfig({ name: 'theme', idKey: 'themeId' })
-export class ThemeStore extends EntityStore<ThemeState, ITheme> {
-  constructor() {
-    super();
+    return {
+      ngModule: DataAccessThemeModule,
+      providers: [
+        ThemeStore,
+        ThemeQuery,
+        ThemeService,
+        {
+          provide: AStorageService,
+          useExisting: themeOpts.themeStorage.storage,
+        },
+        { provide: THEME_OPTS_TOKEN, useValue: themeOpts },
+      ],
+    };
   }
+
+  constructor(private themeService: ThemeService) {}
 }
