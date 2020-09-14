@@ -43,6 +43,9 @@
     },
     "packages-ngx-data-access-akita": {
       "tags": []
+    },
+    "packages-ngx-ui-material": {
+      "tags": []
     }
   }
 }
