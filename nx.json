@@ -45,7 +45,8 @@
       "tags": []
     },
     "packages-ngx-ui-material": {
-      "tags": []
+      "tags": [],
+      "implicitDependencies": ["packages-ngx-ui"]
     }
   }
 }
