@@ -1,0 +1,14 @@
+@import 'libs/packages/ngx-ui/theming';
+@import '~@angular/material/theming';
+
+@import '_scss/fonts';
+@import '_scss/material-fix';
+@import '_scss/theming';
+@import '_scss/typography';
+
+@mixin smat-core() {
+  @include mat-core();
+  @include smat-fonts();
+  @include smat-material-fix();
+  @include smat-typography();
+}

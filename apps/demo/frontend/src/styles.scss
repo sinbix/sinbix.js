@@ -3,6 +3,10 @@
 
 // @include sui-core();
 
+@import 'libs/packages/ngx-ui-material/theming';
+
+@include smat-core();
+
 .red {
   color: red;
 }

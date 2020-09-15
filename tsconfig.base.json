@@ -29,7 +29,8 @@
       "@sinbix/ngx-data-access-akita/*": [
         "libs/packages/ngx-data-access-akita/src/lib/*"
       ],
-      "@sinbix/ngx-ui-material": ["libs/packages/ngx-ui-material/src/index.ts"]
+      "@sinbix/ngx-ui-material": ["libs/packages/ngx-ui-material/src/index.ts"],
+      "@sinbix/ngx-ui-material/*": ["libs/packages/ngx-ui-material/src/lib/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
