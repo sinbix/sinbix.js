@@ -25,13 +25,7 @@
     "dep-graph": "nx dep-graph",
     "help": "nx help",
     "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
-    "packages:install": "npm i dist/libs/packages/ngx-ui-material dist/libs/packages/ngx-ui dist/libs/packages/ngx-utils",
-    "packages:build:ngx-data-access": "nx build packages-ngx-data-access",
-    "packages:build:ngx-data-access-akita": "nx build packages-ngx-data-access-akita",
-    "packages:build:ngx-ui": "nx build packages-ngx-ui",
-    "packages:build:ngx-ui-material": "nx build packages-ngx-ui-material",
-    "packages:build:ngx-utils": "nx build packages-ngx-utils",
-    "packages:build:utils": "nx build packages-utils"
+    "packages:ui:build": "nx build packages-ngx-ui-material --with-deps --prod && npm i ./dist/libs/packages/ngx-ui && npm i ./dist/libs/packages/ngx-ui-material"
   },
   "private": true,
   "dependencies": {
@@ -48,10 +42,6 @@
     "@capacitor/core": "^2.4.1",
     "@datorama/akita": "^5.2.3",
     "@datorama/akita-ng-entity-service": "^5.0.2",
-    "@sinbix/ngx-ui": "file:dist/libs/packages/ngx-ui",
-    "@sinbix/ngx-ui-material": "file:dist/libs/packages/ngx-ui-material",
-    "@sinbix/ngx-utils": "file:dist/libs/packages/ngx-utils",
-    "@sinbix/utils": "file:dist/libs/packages/utils",
     "lodash": "^4.17.20",
     "material-design-icons": "^3.0.1",
     "normalize.css": "^8.0.1",
@@ -60,6 +50,7 @@
     "zone.js": "^0.10.2"
   },
   "devDependencies": {
+    "@angular-builders/custom-webpack": "^10.0.1",
     "@angular-devkit/build-angular": "~0.1000.8",
     "@angular-devkit/build-ng-packagr": "~0.1000.8",
     "@angular/compiler-cli": "~10.1.1",
