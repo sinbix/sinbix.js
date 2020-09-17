@@ -47,6 +47,9 @@
     "packages-ngx-ui-material": {
       "tags": [],
       "implicitDependencies": ["packages-ngx-ui"]
+    },
+    "packages-ngx-feat-ui-material-akita": {
+      "tags": []
     }
   }
 }

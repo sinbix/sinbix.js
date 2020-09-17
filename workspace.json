@@ -401,6 +401,53 @@
           "style": "scss"
         }
       }
+    },
+    "packages-ngx-feat-ui-material-akita": {
+      "projectType": "library",
+      "root": "libs/packages/ngx-feat-ui-material-akita",
+      "sourceRoot": "libs/packages/ngx-feat-ui-material-akita/src",
+      "prefix": "smart-mat",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/packages/ngx-feat-ui-material-akita/tsconfig.lib.json",
+            "project": "libs/packages/ngx-feat-ui-material-akita/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/packages/ngx-feat-ui-material-akita/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/packages/ngx-feat-ui-material-akita/tsconfig.lib.json",
+              "libs/packages/ngx-feat-ui-material-akita/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/packages/ngx-feat-ui-material-akita/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/packages/ngx-feat-ui-material-akita/jest.config.js",
+            "tsConfig": "libs/packages/ngx-feat-ui-material-akita/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/packages/ngx-feat-ui-material-akita/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

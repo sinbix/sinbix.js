@@ -30,7 +30,13 @@
         "libs/packages/ngx-data-access-akita/src/lib/*"
       ],
       "@sinbix/ngx-ui-material": ["libs/packages/ngx-ui-material/src/index.ts"],
-      "@sinbix/ngx-ui-material/*": ["libs/packages/ngx-ui-material/src/lib/*"]
+      "@sinbix/ngx-ui-material/*": ["libs/packages/ngx-ui-material/src/lib/*"],
+      "@sinbix/ngx-feat-ui-material-akita": [
+        "libs/packages/ngx-feat-ui-material-akita/src/index.ts"
+      ],
+      "@sinbix/ngx-feat-ui-material-akita/*": [
+        "libs/packages/ngx-feat-ui-material-akita/src/lib/*"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
