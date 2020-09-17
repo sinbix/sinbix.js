@@ -24,8 +24,7 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
-    "packages:ui:build": "nx build packages-ngx-ui-material --with-deps --prod && npm i ./dist/libs/packages/ngx-ui && npm i ./dist/libs/packages/ngx-ui-material"
+    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points"
   },
   "private": true,
   "dependencies": {
