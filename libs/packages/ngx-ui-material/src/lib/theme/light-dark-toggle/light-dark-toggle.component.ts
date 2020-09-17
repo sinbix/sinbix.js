@@ -3,7 +3,7 @@ import { TMaterialColor } from '@sinbix/ngx-ui-material/common';
 import { TLightDarkTheme } from './light-dark-toggle.model';
 
 @Component({
-  selector: 'smat-theme-light-dark-toggle',
+  selector: 'smat-light-dark-toggle-theme',
   templateUrl: './light-dark-toggle.component.html',
   styleUrls: ['./light-dark-toggle.component.scss'],
 })

@@ -9,14 +9,14 @@ import { ThemeQuery } from './theme.query';
 import { THEME_OPTS_TOKEN } from './theme-opts.token';
 
 @NgModule()
-export class DataAccessThemeModule {
+export class NgxDataAccessThemeModule {
   static forRoot(
     opts?: IThemeOpts
-  ): ModuleWithProviders<DataAccessThemeModule> {
+  ): ModuleWithProviders<NgxDataAccessThemeModule> {
     const themeOpts = _.merge(THEME_DEFAULT_OPTS, opts);
 
     return {
-      ngModule: DataAccessThemeModule,
+      ngModule: NgxDataAccessThemeModule,
       providers: [
         ThemeStore,
         ThemeQuery,

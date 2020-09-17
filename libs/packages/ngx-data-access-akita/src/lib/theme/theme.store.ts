@@ -11,4 +11,8 @@ export interface ThemeState extends EntityState<ITheme>, ActiveState {}
 
 @Injectable()
 @StoreConfig({ name: 'theme', idKey: 'themeId' })
-export class ThemeStore extends EntityStore<ThemeState, ITheme> {}
+export class ThemeStore extends EntityStore<ThemeState, ITheme> {
+  constructor() {
+    super();
+  }
+}
