@@ -6,7 +6,10 @@ export interface IBunchCallback<T> {
   (bunchEntity: any): any;
 }
 
-export function bunchHandler(bunch: TBunch<any>, callback: IBunchCallback<any>) {
+export function bunchHandler(
+  bunch: TBunch<any>,
+  callback: IBunchCallback<any>
+) {
   if (_.isArray(bunch)) {
     bunch.map((entiry) => {
       callback(entiry);
