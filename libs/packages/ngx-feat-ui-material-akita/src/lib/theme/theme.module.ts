@@ -6,5 +6,6 @@ import { LightDarkToggleComponent } from './light-dark-toggle';
 @NgModule({
   declarations: [LightDarkToggleComponent],
   imports: [CommonModule, NgxUiMatThemeModule],
+  exports: [LightDarkToggleComponent],
 })
-export class ThemeModule {}
+export class NgxFeatUiMatThemeModule {}

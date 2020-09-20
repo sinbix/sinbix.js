@@ -1,0 +1,12 @@
+@import '~@sinbix/ngx-ui-material/theming';
+
+.toggle-wrap {
+  flex-direction: row;
+  display: flex;
+  place-content: center start;
+  align-items: center;
+
+  > .toggle {
+    margin: 0 4px;
+  }
+}
