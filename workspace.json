@@ -49,7 +49,7 @@
       "projectType": "library",
       "root": "libs/packages/ngx-ui",
       "sourceRoot": "libs/packages/ngx-ui/src",
-      "prefix": "sinbix",
+      "prefix": "sui",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
@@ -314,6 +314,39 @@
         }
       }
     },
+    "apps-docs-ngx-frontend-shell-feat-main": {
+      "projectType": "library",
+      "root": "libs/apps/docs/ngx-frontend/shell/feat-main",
+      "sourceRoot": "libs/apps/docs/ngx-frontend/shell/feat-main/src",
+      "prefix": "sinbix",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/apps/docs/ngx-frontend/shell/feat-main/tsconfig.lib.json",
+              "libs/apps/docs/ngx-frontend/shell/feat-main/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/apps/docs/ngx-frontend/shell/feat-main/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/apps/docs/ngx-frontend/shell/feat-main/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
     "docs-ngx-frontend": {
       "projectType": "application",
       "schematics": {
@@ -323,14 +356,14 @@
       },
       "root": "apps/docs/ngx-frontend",
       "sourceRoot": "apps/docs/ngx-frontend/src",
-      "prefix": "sinbix",
+      "prefix": "docs",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/apps/docs/ngx-frontend",
             "index": "apps/docs/ngx-frontend/src/index.html",
-            "main": "apps/docs/ngx-frontend/src/main.ts",
+            "main": "apps/docs/ngx-frontend/src/main.browser.ts",
             "polyfills": "apps/docs/ngx-frontend/src/polyfills.ts",
             "tsConfig": "apps/docs/ngx-frontend/tsconfig.app.json",
             "aot": true,
@@ -438,29 +471,29 @@
         }
       }
     },
-    "apps-docs-ngx-frontend-shell-feat-main": {
+    "apps-docs-ngx-frontend-shell-ui": {
       "projectType": "library",
-      "root": "libs/apps/docs/ngx-frontend/shell/feat-main",
-      "sourceRoot": "libs/apps/docs/ngx-frontend/shell/feat-main/src",
+      "root": "libs/apps/docs/ngx-frontend/shell/ui",
+      "sourceRoot": "libs/apps/docs/ngx-frontend/shell/ui/src",
       "prefix": "sinbix",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/apps/docs/ngx-frontend/shell/feat-main/tsconfig.lib.json",
-              "libs/apps/docs/ngx-frontend/shell/feat-main/tsconfig.spec.json"
+              "libs/apps/docs/ngx-frontend/shell/ui/tsconfig.lib.json",
+              "libs/apps/docs/ngx-frontend/shell/ui/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**",
-              "!libs/apps/docs/ngx-frontend/shell/feat-main/**/*"
+              "!libs/apps/docs/ngx-frontend/shell/ui/**/*"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/apps/docs/ngx-frontend/shell/feat-main/jest.config.js",
+            "jestConfig": "libs/apps/docs/ngx-frontend/shell/ui/jest.config.js",
             "passWithNoTests": true
           }
         }
