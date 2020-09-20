@@ -50,6 +50,9 @@
     "docs/ngx-frontend-e2e": {
       "tags": [],
       "implicitDependencies": ["docs-ngx-frontend"]
+    },
+    "apps-docs-ngx-frontend-shell-feat-main": {
+      "tags": []
     }
   }
 }
