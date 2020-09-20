@@ -2,12 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import {
-  DocsNgxFrontendShellFeatMainAppModule,
+  DocsNgxFrontendShellFeatMainModule,
   AppComponent,
-} from '@sinbix/docs-ngx-frontend-shell-feat-main';
+} from '@sinbix/docs-ngx-frontend/shell-feat-main';
 
 @NgModule({
-  imports: [BrowserModule, DocsNgxFrontendShellFeatMainAppModule],
+  imports: [BrowserModule, DocsNgxFrontendShellFeatMainModule],
   providers: [],
   bootstrap: [AppComponent],
 })

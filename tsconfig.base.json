@@ -40,7 +40,7 @@
       "@sinbix/docs-ngx-frontend/shell-feat-main": [
         "libs/apps/docs/ngx-frontend/shell/feat-main/src/index.ts"
       ],
-      "docs-ngx-frontend/shell-ui": [
+      "@sinbix/docs-ngx-frontend/shell-ui": [
         "libs/apps/docs/ngx-frontend/shell/ui/src/index.ts"
       ]
     }

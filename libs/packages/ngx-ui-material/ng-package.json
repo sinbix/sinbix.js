@@ -1,7 +1,7 @@
 {
   "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../../dist/libs/packages/ngx-ui-material",
-  "assets": ["./_theming.scss", "./_scss/*.scss", "./_fonts/**/*.ttf"],
+  "assets": ["./_theming.scss", "./scss/*.scss", "./fonts/**/*.ttf"],
   "lib": {
     "entryFile": "src/index.ts"
   }

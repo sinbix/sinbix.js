@@ -359,8 +359,14 @@
       "prefix": "docs",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "customWebpackConfig": {
+              "path": "libs/packages/webpack.config.ts",
+              "mergeStrategies": {
+                "externals": "replace"
+              }
+            },
             "outputPath": "dist/apps/docs/ngx-frontend",
             "index": "apps/docs/ngx-frontend/src/index.html",
             "main": "apps/docs/ngx-frontend/src/main.browser.ts",
@@ -371,7 +377,20 @@
               "apps/docs/ngx-frontend/src/favicon.ico",
               "apps/docs/ngx-frontend/src/assets"
             ],
-            "styles": ["apps/docs/ngx-frontend/src/styles.scss"],
+            "styles": [
+              "libs/apps/docs/ngx-frontend/shell/ui/scss/styles.scss",
+              {
+                "input": "libs/apps/docs/ngx-frontend/shell/ui/scss/themes/light-theme.scss",
+                "lazy": true,
+                "bundleName": "light-theme"
+              },
+              {
+                "input": "libs/apps/docs/ngx-frontend/shell/ui/scss/themes/dark-theme.scss",
+                "lazy": true,
+                "bundleName": "dark-theme"
+              }
+            ],
+            "extractCss": true,
             "scripts": []
           },
           "configurations": {
@@ -406,8 +425,14 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
+            "customWebpackConfig": {
+              "path": "libs/packages/webpack.config.ts",
+              "mergeStrategies": {
+                "externals": "replace"
+              }
+            },
             "browserTarget": "docs-ngx-frontend:build"
           },
           "configurations": {

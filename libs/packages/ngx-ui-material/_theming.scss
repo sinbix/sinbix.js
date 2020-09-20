@@ -1,12 +1,13 @@
 @import '~@sinbix/ngx-ui/theming';
 @import '~@angular/material/theming';
 
-@import '_scss/fonts';
-@import '_scss/material-fix';
-@import '_scss/theming';
-@import '_scss/typography';
+@import 'scss/fonts';
+@import 'scss/material-fix';
+@import 'scss/theming';
+@import 'scss/typography';
 
 @mixin smat-core() {
+  @include sui-core();
   @include mat-core();
   @include smat-fonts();
   @include smat-material-fix();
