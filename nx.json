@@ -55,7 +55,8 @@
       "implicitDependencies": ["docs-ngx-frontend"]
     },
     "apps-docs-ngx-frontend-shell-ui": {
-      "tags": []
+      "tags": [],
+      "implicitDependencies": ["docs-ngx-frontend"]
     }
   }
 }
