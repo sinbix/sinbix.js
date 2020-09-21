@@ -3,10 +3,10 @@ import { NgxDataAccessThemeModule } from '@sinbix/ngx-data-access-akita/theme';
 import { NgxFeatUiMatThemeModule } from '@sinbix/ngx-feat-ui-material-akita/theme';
 
 import { THEMES } from './common/themes';
-import { AppComponent } from './app';
+import { ShellComponent } from './shell.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [ShellComponent],
   imports: [
     NgxDataAccessThemeModule.forRoot({
       themes: THEMES,
@@ -14,6 +14,6 @@ import { AppComponent } from './app';
     }),
     NgxFeatUiMatThemeModule,
   ],
-  exports: [AppComponent],
+  exports: [ShellComponent],
 })
 export class DocsNgxFrontendShellModule {}

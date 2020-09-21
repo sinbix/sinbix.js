@@ -483,7 +483,7 @@
       "projectType": "library",
       "root": "libs/apps/docs/ngx-frontend/shell",
       "sourceRoot": "libs/apps/docs/ngx-frontend/shell/src",
-      "prefix": "sinbix",
+      "prefix": "docs",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",

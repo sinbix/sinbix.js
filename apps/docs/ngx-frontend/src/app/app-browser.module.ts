@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 
 import {
   DocsNgxFrontendShellModule,
-  AppComponent,
+  ShellComponent,
 } from '@sinbix/docs-ngx-frontend/shell';
 
 @NgModule({
   imports: [BrowserModule, DocsNgxFrontendShellModule],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [ShellComponent],
 })
 export class AppBrowserModule {}
