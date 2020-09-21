@@ -37,11 +37,8 @@
       "@sinbix/ngx-feat-ui-material-akita/*": [
         "libs/packages/ngx-feat-ui-material-akita/src/lib/*"
       ],
-      "@sinbix/docs-ngx-frontend/shell-feat-main": [
-        "libs/apps/docs/ngx-frontend/shell/feat-main/src/index.ts"
-      ],
-      "@sinbix/docs-ngx-frontend/shell-ui": [
-        "libs/apps/docs/ngx-frontend/shell/ui/src/index.ts"
+      "@sinbix/docs-ngx-frontend/shell": [
+        "libs/apps/docs/ngx-frontend/shell/src/index.ts"
       ]
     }
   },

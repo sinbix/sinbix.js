@@ -26,7 +26,10 @@
               "libs/packages/ngx-utils/tsconfig.lib.json",
               "libs/packages/ngx-utils/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/packages/ngx-utils/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/packages/ngx-utils/**/*"
+            ]
           }
         },
         "test": {
@@ -70,7 +73,10 @@
               "libs/packages/ngx-ui/tsconfig.lib.json",
               "libs/packages/ngx-ui/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/packages/ngx-ui/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/packages/ngx-ui/**/*"
+            ]
           }
         },
         "test": {
@@ -103,7 +109,10 @@
               "libs/packages/utils/tsconfig.lib.json",
               "libs/packages/utils/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/packages/utils/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/packages/utils/**/*"
+            ]
           }
         },
         "test": {
@@ -121,7 +130,9 @@
             "tsConfig": "libs/packages/utils/tsconfig.lib.json",
             "packageJson": "libs/packages/utils/package.json",
             "main": "libs/packages/utils/src/index.ts",
-            "assets": ["libs/packages/utils/*.md"]
+            "assets": [
+              "libs/packages/utils/*.md"
+            ]
           }
         }
       }
@@ -314,39 +325,6 @@
         }
       }
     },
-    "apps-docs-ngx-frontend-shell-feat-main": {
-      "projectType": "library",
-      "root": "libs/apps/docs/ngx-frontend/shell/feat-main",
-      "sourceRoot": "libs/apps/docs/ngx-frontend/shell/feat-main/src",
-      "prefix": "sinbix",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/apps/docs/ngx-frontend/shell/feat-main/tsconfig.lib.json",
-              "libs/apps/docs/ngx-frontend/shell/feat-main/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/apps/docs/ngx-frontend/shell/feat-main/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/apps/docs/ngx-frontend/shell/feat-main/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
     "docs-ngx-frontend": {
       "projectType": "application",
       "schematics": {
@@ -378,14 +356,14 @@
               "apps/docs/ngx-frontend/src/assets"
             ],
             "styles": [
-              "libs/apps/docs/ngx-frontend/shell/ui/scss/styles.scss",
+              "libs/apps/docs/ngx-frontend/shell/scss/styles.scss",
               {
-                "input": "libs/apps/docs/ngx-frontend/shell/ui/scss/themes/light-theme.scss",
+                "input": "libs/apps/docs/ngx-frontend/shell/scss/themes/light-theme.scss",
                 "lazy": true,
                 "bundleName": "light-theme"
               },
               {
-                "input": "libs/apps/docs/ngx-frontend/shell/ui/scss/themes/dark-theme.scss",
+                "input": "libs/apps/docs/ngx-frontend/shell/scss/themes/dark-theme.scss",
                 "lazy": true,
                 "bundleName": "dark-theme"
               }
@@ -454,7 +432,10 @@
               "apps/docs/ngx-frontend/tsconfig.app.json",
               "apps/docs/ngx-frontend/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/docs/ngx-frontend/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/docs/ngx-frontend/**/*"
+            ]
           }
         },
         "test": {
@@ -487,7 +468,9 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/docs/ngx-frontend-e2e/tsconfig.e2e.json"],
+            "tsConfig": [
+              "apps/docs/ngx-frontend-e2e/tsconfig.e2e.json"
+            ],
             "exclude": [
               "**/node_modules/**",
               "!apps/docs/ngx-frontend-e2e/**/*"
@@ -496,29 +479,29 @@
         }
       }
     },
-    "apps-docs-ngx-frontend-shell-ui": {
+    "apps-docs-ngx-frontend-shell": {
       "projectType": "library",
-      "root": "libs/apps/docs/ngx-frontend/shell/ui",
-      "sourceRoot": "libs/apps/docs/ngx-frontend/shell/ui/src",
+      "root": "libs/apps/docs/ngx-frontend/shell",
+      "sourceRoot": "libs/apps/docs/ngx-frontend/shell/src",
       "prefix": "sinbix",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/apps/docs/ngx-frontend/shell/ui/tsconfig.lib.json",
-              "libs/apps/docs/ngx-frontend/shell/ui/tsconfig.spec.json"
+              "libs/apps/docs/ngx-frontend/shell/tsconfig.lib.json",
+              "libs/apps/docs/ngx-frontend/shell/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**",
-              "!libs/apps/docs/ngx-frontend/shell/ui/**/*"
+              "!libs/apps/docs/ngx-frontend/shell/**/*"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/apps/docs/ngx-frontend/shell/ui/jest.config.js",
+            "jestConfig": "libs/apps/docs/ngx-frontend/shell/jest.config.js",
             "passWithNoTests": true
           }
         }

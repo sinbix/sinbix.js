@@ -1,6 +1,6 @@
 module.exports = {
-  name: 'apps-docs-ngx-frontend-shell-ui',
-  preset: '../../../../../../jest.config.js',
+  name: 'apps-docs-ngx-frontend-shell',
+  preset: '../../../../../jest.config.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -13,7 +13,7 @@ module.exports = {
     },
   },
   coverageDirectory:
-    '../../../../../../coverage/libs/apps/docs/ngx-frontend/shell/ui',
+    '../../../../../coverage/libs/apps/docs/ngx-frontend/shell',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

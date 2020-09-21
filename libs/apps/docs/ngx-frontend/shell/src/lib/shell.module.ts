@@ -16,4 +16,4 @@ import { AppComponent } from './app';
   ],
   exports: [AppComponent],
 })
-export class DocsNgxFrontendShellFeatMainModule {}
+export class DocsNgxFrontendShellModule {}
