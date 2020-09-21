@@ -39,6 +39,9 @@
       ],
       "@sinbix/docs-ngx-frontend/shell": [
         "libs/apps/docs/ngx-frontend/shell/src/index.ts"
+      ],
+      "@sinbix/docs-ngx-frontend/feat-main": [
+        "libs/apps/docs/ngx-frontend/feat-main/src/index.ts"
       ]
     }
   },

@@ -495,6 +495,39 @@
           "style": "scss"
         }
       }
+    },
+    "apps-docs-ngx-frontend-feat-main": {
+      "projectType": "library",
+      "root": "libs/apps/docs/ngx-frontend/feat-main",
+      "sourceRoot": "libs/apps/docs/ngx-frontend/feat-main/src",
+      "prefix": "sinbix",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/apps/docs/ngx-frontend/feat-main/tsconfig.lib.json",
+              "libs/apps/docs/ngx-frontend/feat-main/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/apps/docs/ngx-frontend/feat-main/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/apps/docs/ngx-frontend/feat-main/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

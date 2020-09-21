@@ -17,12 +17,7 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
       }
     }
   },
@@ -44,9 +39,7 @@
     },
     "packages-ngx-ui-material": {
       "tags": [],
-      "implicitDependencies": [
-        "packages-ngx-ui"
-      ]
+      "implicitDependencies": ["packages-ngx-ui"]
     },
     "packages-ngx-feat-ui-material-akita": {
       "tags": []
@@ -56,11 +49,12 @@
     },
     "docs/ngx-frontend-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "docs-ngx-frontend"
-      ]
+      "implicitDependencies": ["docs-ngx-frontend"]
     },
     "apps-docs-ngx-frontend-shell": {
+      "tags": []
+    },
+    "apps-docs-ngx-frontend-feat-main": {
       "tags": []
     }
   }
