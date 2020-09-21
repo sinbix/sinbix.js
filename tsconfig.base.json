@@ -42,6 +42,9 @@
       ],
       "@sinbix/docs-ngx-frontend/feat-main": [
         "libs/apps/docs/ngx-frontend/feat-main/src/index.ts"
+      ],
+      "@sinbix/docs-ngx-frontend/feat-home": [
+        "libs/apps/docs/ngx-frontend/feat-home/src/index.ts"
       ]
     }
   },

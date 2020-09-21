@@ -56,6 +56,9 @@
     },
     "apps-docs-ngx-frontend-feat-main": {
       "tags": []
+    },
+    "apps-docs-ngx-frontend-feat-home": {
+      "tags": []
     }
   }
 }

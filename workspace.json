@@ -528,6 +528,39 @@
           "style": "scss"
         }
       }
+    },
+    "apps-docs-ngx-frontend-feat-home": {
+      "projectType": "library",
+      "root": "libs/apps/docs/ngx-frontend/feat-home",
+      "sourceRoot": "libs/apps/docs/ngx-frontend/feat-home/src",
+      "prefix": "docs-home",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/apps/docs/ngx-frontend/feat-home/tsconfig.lib.json",
+              "libs/apps/docs/ngx-frontend/feat-home/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/apps/docs/ngx-frontend/feat-home/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/apps/docs/ngx-frontend/feat-home/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {
