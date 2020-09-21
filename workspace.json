@@ -500,7 +500,7 @@
       "projectType": "library",
       "root": "libs/apps/docs/ngx-frontend/feat-main",
       "sourceRoot": "libs/apps/docs/ngx-frontend/feat-main/src",
-      "prefix": "sinbix",
+      "prefix": "docs-main",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",

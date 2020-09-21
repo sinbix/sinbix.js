@@ -1,1 +1,1 @@
-export * from './lib/feat-main.module';
+export * from './lib/docs-main.module';
