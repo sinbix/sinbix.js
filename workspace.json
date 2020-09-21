@@ -26,10 +26,7 @@
               "libs/packages/ngx-utils/tsconfig.lib.json",
               "libs/packages/ngx-utils/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/packages/ngx-utils/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/packages/ngx-utils/**/*"]
           }
         },
         "test": {
@@ -73,10 +70,7 @@
               "libs/packages/ngx-ui/tsconfig.lib.json",
               "libs/packages/ngx-ui/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/packages/ngx-ui/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/packages/ngx-ui/**/*"]
           }
         },
         "test": {
@@ -109,10 +103,7 @@
               "libs/packages/utils/tsconfig.lib.json",
               "libs/packages/utils/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/packages/utils/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/packages/utils/**/*"]
           }
         },
         "test": {
@@ -130,9 +121,7 @@
             "tsConfig": "libs/packages/utils/tsconfig.lib.json",
             "packageJson": "libs/packages/utils/package.json",
             "main": "libs/packages/utils/src/index.ts",
-            "assets": [
-              "libs/packages/utils/*.md"
-            ]
+            "assets": ["libs/packages/utils/*.md"]
           }
         }
       }
@@ -432,10 +421,7 @@
               "apps/docs/ngx-frontend/tsconfig.app.json",
               "apps/docs/ngx-frontend/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/docs/ngx-frontend/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/docs/ngx-frontend/**/*"]
           }
         },
         "test": {
@@ -468,9 +454,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/docs/ngx-frontend-e2e/tsconfig.e2e.json"
-            ],
+            "tsConfig": ["apps/docs/ngx-frontend-e2e/tsconfig.e2e.json"],
             "exclude": [
               "**/node_modules/**",
               "!apps/docs/ngx-frontend-e2e/**/*"
@@ -518,12 +502,16 @@
   },
   "defaultProject": "docs-ngx-frontend",
   "schematics": {
+    "@nrwl/angular:component": {
+      "style": "scss"
+    },
     "@nrwl/angular:application": {
       "unitTestRunner": "jest",
       "e2eTestRunner": "cypress"
     },
     "@nrwl/angular:library": {
-      "unitTestRunner": "jest"
+      "unitTestRunner": "jest",
+      "style": "scss"
     }
   }
 }
