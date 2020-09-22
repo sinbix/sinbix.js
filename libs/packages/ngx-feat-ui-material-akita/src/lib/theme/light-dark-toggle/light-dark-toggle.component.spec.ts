@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { NgxDataAccessThemeModule } from '@sinbix/ngx-data-access-akita/theme';
-import { NgxUiMatThemeModule } from '@sinbix/ngx-ui-material/theme';
+import { DataAccessThemeModule } from '@sinbix/ngx-data-access-akita/theme';
+import { UiMatThemeModule } from '@sinbix/ngx-ui-material/theme';
 
 import { LightDarkToggleComponent } from './light-dark-toggle.component';
 
@@ -11,7 +11,7 @@ describe('LightDarkToggleComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        imports: [NgxUiMatThemeModule, NgxDataAccessThemeModule.forRoot()],
+        imports: [UiMatThemeModule, DataAccessThemeModule.forRoot()],
         declarations: [LightDarkToggleComponent],
       }).compileComponents();
     })

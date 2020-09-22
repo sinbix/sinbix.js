@@ -17,4 +17,4 @@ import { LinkComponent } from './link';
     LinkComponent
   ]
 })
-export class NgxUiNavigationModule { }
+export class UiNavigationModule { }

@@ -15,4 +15,4 @@ import { AnimateComponent } from './animate.component';
     AnimateComponent
   ]
 })
-export class NgxUiAnimateModule { }
+export class UiAnimateModule { }

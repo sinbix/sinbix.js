@@ -1,17 +1,17 @@
 import { TestBed, waitForAsync } from '@angular/core/testing';
 
-import { NgxUiAnimateModule } from './animate.module';
+import { UiAnimateModule } from './animate.module';
 
 describe('AnimateModule', () => {
   beforeEach(
     waitForAsync(() => {
       return TestBed.configureTestingModule({
-        imports: [NgxUiAnimateModule],
+        imports: [UiAnimateModule],
       }).compileComponents();
     })
   );
 
   it('should create', () => {
-    expect(NgxUiAnimateModule).toBeTruthy();
+    expect(UiAnimateModule).toBeTruthy();
   });
 });
