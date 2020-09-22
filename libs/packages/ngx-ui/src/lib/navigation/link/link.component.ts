@@ -1,4 +1,4 @@
-import * as _ from 'lodash';
+import * as _ from 'lodash-es';
 import {
   Component,
   ElementRef,
@@ -8,7 +8,7 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
-import { bunchHandler } from '@sinbix/utils';
+import { bunchHandler } from '@sinbix/utils/bunch';
 import { NavigationService } from '@sinbix/ngx-utils/navigation';
 
 @Component({

@@ -95,6 +95,18 @@
       "projectType": "library",
       "schematics": {},
       "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/packages/utils/tsconfig.lib.json",
+            "project": "libs/packages/utils/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/packages/utils/tsconfig.lib.prod.json"
+            }
+          }
+        },
         "lint": {
           "builder": "@nrwl/linter:lint",
           "options": {
@@ -112,16 +124,6 @@
             "jestConfig": "libs/packages/utils/jest.config.js",
             "tsConfig": "libs/packages/utils/tsconfig.spec.json",
             "passWithNoTests": true
-          }
-        },
-        "build": {
-          "builder": "@nrwl/node:package",
-          "options": {
-            "outputPath": "dist/libs/packages/utils",
-            "tsConfig": "libs/packages/utils/tsconfig.lib.json",
-            "packageJson": "libs/packages/utils/package.json",
-            "main": "libs/packages/utils/src/index.ts",
-            "assets": ["libs/packages/utils/*.md"]
           }
         }
       }

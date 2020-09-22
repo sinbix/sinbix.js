@@ -1,1 +1,1 @@
-export * from './lib/bunch';
+export default {};

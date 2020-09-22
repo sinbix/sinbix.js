@@ -1,4 +1,4 @@
-import * as _ from 'lodash';
+import * as _ from 'lodash-es';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { AStorageService } from '@sinbix/ngx-data-access/storage';
 
