@@ -1,0 +1,84 @@
+@import '~@sinbix/ngx-ui-material/theming';
+
+$primary: mat-palette(
+  (
+    100: #b2bccd,
+    400: #8594da,
+    500: #4b73cd,
+    600: #3e5995,
+    700: #0e78cc,
+    contrast: (
+      100: $light-primary-text,
+      400: $light-primary-text,
+      500: $light-primary-text,
+      600: $light-primary-text,
+      700: $light-primary-text,
+    ),
+  )
+);
+
+$accent: mat-palette(
+  (
+    100: #9ebb98,
+    400: #66bb6a,
+    500: #43a047,
+    700: #2e7d32,
+    contrast: (
+      100: $dark-primary-text,
+      400: $dark-primary-text,
+      500: $light-primary-text,
+      700: $light-primary-text,
+    ),
+  )
+);
+
+$warn: mat-palette(
+  (
+    100: #efbabc,
+    400: #ef5350,
+    500: #f44336,
+    600: #e64a19,
+    700: #bf360c,
+    A100: rgba(191, 54, 12, 0.8),
+    contrast: (
+      100: $light-primary-text,
+      400: $light-primary-text,
+      500: $light-primary-text,
+      600: $light-primary-text,
+      700: $light-primary-text,
+      A100: $light-primary-text,
+    ),
+  )
+);
+
+$main-light: mat-palette(
+  (
+    500: #fafafa,
+    700: #e0e0e0,
+    contrast: (
+      500: $dark-primary-text,
+      700: $dark-primary-text,
+    ),
+  )
+);
+
+$main-dark: mat-palette(
+  (
+    100: #616161,
+    500: #303030,
+    contrast: (
+      100: $light-primary-text,
+      500: $light-primary-text,
+    ),
+  )
+);
+
+body {
+  @include smat-theme(
+    $colors: (
+      primary: $primary,
+      accent: $accent,
+      warn: $warn,
+    )
+  );
+}

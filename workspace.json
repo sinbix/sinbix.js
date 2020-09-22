@@ -342,17 +342,21 @@
             "aot": true,
             "assets": [
               "apps/docs/ngx-frontend/src/favicon.ico",
-              "apps/docs/ngx-frontend/src/assets"
+              {
+                "input": "libs/apps/docs/ngx-frontend/assets",
+                "glob": "**/*",
+                "output": "assets"
+              }
             ],
             "styles": [
-              "libs/apps/docs/ngx-frontend/shell/scss/styles.scss",
+              "libs/apps/docs/ngx-frontend/scss/styles.scss",
               {
-                "input": "libs/apps/docs/ngx-frontend/shell/scss/themes/light-theme.scss",
+                "input": "libs/apps/docs/ngx-frontend/scss/themes/light-theme.scss",
                 "lazy": true,
                 "bundleName": "light-theme"
               },
               {
-                "input": "libs/apps/docs/ngx-frontend/shell/scss/themes/dark-theme.scss",
+                "input": "libs/apps/docs/ngx-frontend/scss/themes/dark-theme.scss",
                 "lazy": true,
                 "bundleName": "dark-theme"
               }

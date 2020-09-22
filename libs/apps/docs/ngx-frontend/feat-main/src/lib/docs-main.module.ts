@@ -6,6 +6,7 @@ import { NgxFeatUiMatThemeModule } from '@sinbix/ngx-feat-ui-material-akita/them
 
 import { DocsMainComponent } from './docs-main.component';
 import { HeaderComponent } from './header/header.component';
+import { MatButtonModule } from '@angular/material/button';
 
 const routes: Routes = [
   {
@@ -28,6 +29,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     UiRouterModule,
+    MatButtonModule,
     NgxFeatUiMatThemeModule,
   ],
   declarations: [DocsMainComponent, HeaderComponent],

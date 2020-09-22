@@ -1,0 +1,43 @@
+header {
+  padding: 12px 24px;
+
+  display: flex;
+  flex-direction: column;
+  place-content: stretch start;
+  align-items: stretch;
+  margin-bottom: -8px;
+
+  .top-navbar {
+    // @include fxLayout(
+    //   $align: (
+    //     'h': space-between,
+    //     'v': center,
+    //   )
+    // );
+    display: flex;
+    flex-direction: row;
+    place-content: center space-between;
+
+    .logo-menu {
+      //   @include fxLayout(
+      //     $align: (
+      //       'h': start,
+      //       'v': center,
+      //     ),
+      //     $gap: '32px'
+      //   );
+
+      display: flex;
+      flex-direction: row;
+
+      .logo {
+        display: flex;
+        place-content: center;
+        img {
+          height: 25px;
+          width: auto;
+        }
+      }
+    }
+  }
+}
