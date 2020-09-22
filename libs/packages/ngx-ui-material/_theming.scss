@@ -7,9 +7,10 @@
 @import 'scss/typography';
 
 @mixin smat-core() {
+  @include smat-fonts();
+
   @include sui-core();
   @include mat-core();
-  @include smat-fonts();
   @include smat-material-fix();
   @include smat-typography();
 }

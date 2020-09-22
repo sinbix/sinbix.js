@@ -1,2 +1,2 @@
-export * from './lib/shell.component';
-export * from './lib/shell.module';
+export * from './lib/docs-shell.component';
+export * from './lib/docs-shell.module';

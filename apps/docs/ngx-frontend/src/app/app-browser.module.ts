@@ -2,10 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppModule } from './app.module';
-import { AppComponent } from './app.component';
+import { DocsShellComponent } from '@sinbix/docs-ngx-frontend/shell';
 
 @NgModule({
   imports: [BrowserModule, AppModule],
-  bootstrap: [AppComponent],
+  bootstrap: [DocsShellComponent],
 })
 export class AppBrowserModule {}
