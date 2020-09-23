@@ -10,6 +10,7 @@ import {
 } from '@angular/core';
 import { bunchHandler } from '@sinbix/utils/bunch';
 import { NavigationService } from '@sinbix/ngx-utils/navigation';
+import { TCssClasses } from '@sinbix/models/common';
 
 @Component({
   selector: 'sui-nav-link',
@@ -25,7 +26,17 @@ export class LinkComponent implements OnInit {
   @Input() exactMatch: boolean;
   @Input() function: any;
 
-  @Input() active: string | string[];
+  @Input() set active(active: TCssClasses) {
+    if (active) {
+      this._active = active;
+    } else {
+      this._active = [];
+    }
+  }
+  get active() {
+    return this._active;
+  }
+  private _active: TCssClasses = [];
 
   constructor(
     private renderer: Renderer2,

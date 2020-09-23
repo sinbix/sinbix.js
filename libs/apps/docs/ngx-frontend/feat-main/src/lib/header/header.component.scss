@@ -15,11 +15,13 @@
   > .top-navbar > .logo-menu {
     display: flex;
     flex-direction: row;
+    place-content: center space-between;
+    align-items: center;
   }
 
   > .top-navbar > .logo-menu > .logo-link {
-    display: flex;
-    place-content: center;
+    // display: flex;
+    // place-content: center;
   }
 
   > .top-navbar > .logo-menu > .logo-link > .logo {

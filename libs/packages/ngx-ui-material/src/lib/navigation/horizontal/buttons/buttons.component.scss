@@ -1,0 +1,14 @@
+smat-nav-h-buttons {
+  flex-flow: row wrap;
+  display: flex;
+  place-content: center space-between;
+  align-items: center;
+
+  > smat-nav-h-item {
+    flex: 1;
+  }
+
+  > smat-nav-h-item > sui-nav-link > .nav-link > .nav-h-button {
+    width: 100%;
+  }
+}

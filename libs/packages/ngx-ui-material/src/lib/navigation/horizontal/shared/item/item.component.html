@@ -1,0 +1,36 @@
+<ng-container *ngIf="!item.hidden">
+  <ng-container
+    *ngTemplateOutlet="item.children?.length ? parentItem : aloneItem"
+  ></ng-container>
+</ng-container>
+
+<ng-template #parentItem>
+  <ng-container *ngTemplateOutlet="content"></ng-container>
+  <smat-nav-h-children
+    #children
+    *ngIf="pivot"
+    [pivot]="pivot"
+    [prefDir]="prefDir"
+    [level]="level + 1"
+    [items]="item.children"
+    [active]="activeChild"
+  ></smat-nav-h-children>
+</ng-template>
+
+<ng-template #aloneItem>
+  <ng-container *ngTemplateOutlet="content"></ng-container>
+</ng-template>
+
+<ng-template #content>
+  <sui-nav-link
+    class="-decoration-none"
+    [url]="item.url"
+    [active]="level ? activeChild : activeParent"
+    [exactMatch]="item.exactMatch"
+    [externalUrl]="item.externalUrl"
+    [openInNewTab]="item.openInNewTab"
+    [function]="item.function"
+  >
+    <ng-content></ng-content>
+  </sui-nav-link>
+</ng-template>

@@ -1,4 +1,4 @@
-import * as _ from 'lodash';
+import * as _ from 'lodash-es';
 import { TBunch, IBunchCallback } from '@sinbix/models/bunch';
 
 export function bunchHandler(

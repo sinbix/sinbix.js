@@ -1,3 +1,5 @@
+import { INavItem } from '@sinbix/models/navigation';
+
 // export const mainMenu: INavItem[] = [
 //   {
 //     title: "Компоненты",
