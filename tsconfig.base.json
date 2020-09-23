@@ -48,7 +48,10 @@
         "libs/apps/docs/ngx-frontend/feat-home/src/index.ts"
       ],
       "@sinbix/models": ["libs/packages/models/src/index.ts"],
-      "@sinbix/models/*": ["libs/packages/models/src/lib/*"]
+      "@sinbix/models/*": ["libs/packages/models/src/lib/*"],
+      "@sinbix/docs-ngx-frontend/components-feat-main": [
+        "libs/apps/docs/ngx-frontend/components/feat-main/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

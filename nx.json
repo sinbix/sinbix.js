@@ -62,6 +62,9 @@
     },
     "packages-models": {
       "tags": []
+    },
+    "apps-docs-ngx-frontend-components-feat-main": {
+      "tags": []
     }
   }
 }

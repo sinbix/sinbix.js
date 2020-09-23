@@ -605,6 +605,39 @@
           }
         }
       }
+    },
+    "apps-docs-ngx-frontend-components-feat-main": {
+      "projectType": "library",
+      "root": "libs/apps/docs/ngx-frontend/components/feat-main",
+      "sourceRoot": "libs/apps/docs/ngx-frontend/components/feat-main/src",
+      "prefix": "docs",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/apps/docs/ngx-frontend/components/feat-main/tsconfig.lib.json",
+              "libs/apps/docs/ngx-frontend/components/feat-main/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/apps/docs/ngx-frontend/components/feat-main/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/apps/docs/ngx-frontend/components/feat-main/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

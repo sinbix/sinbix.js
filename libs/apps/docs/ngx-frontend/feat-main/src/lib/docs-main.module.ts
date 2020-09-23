@@ -20,6 +20,13 @@ const routes: Routes = [
             (m) => m.DocsHomeModule
           ),
       },
+      {
+        path: 'components',
+        loadChildren: () =>
+          import('@sinbix/docs-ngx-frontend/components-feat-main').then(
+            (m) => m.DocsComponentsMainModule
+          ),
+      },
     ],
   },
 ];
