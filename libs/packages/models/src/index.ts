@@ -1,1 +1,1 @@
-export * from './lib/packages-models';
+export default {};

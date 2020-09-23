@@ -1,10 +1,5 @@
 import * as _ from 'lodash';
-
-export type TBunch<T> = T | T[];
-
-export interface IBunchCallback<T> {
-  (bunchEntity: any): any;
-}
+import { TBunch, IBunchCallback } from '@sinbix/models/bunch';
 
 export function bunchHandler(
   bunch: TBunch<any>,
