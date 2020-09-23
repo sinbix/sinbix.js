@@ -59,6 +59,9 @@
     },
     "apps-docs-ngx-frontend-feat-home": {
       "tags": []
+    },
+    "packages-models": {
+      "tags": []
     }
   }
 }
