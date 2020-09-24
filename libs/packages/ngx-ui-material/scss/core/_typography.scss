@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------------------------------------
 // @ Typography
 // -----------------------------------------------------------------------------------------------------
-@mixin smat-typography() {
+@mixin smat-typography-core() {
   html {
     line-height: 1.4 !important;
     letter-spacing: -0 !important;
@@ -124,40 +124,5 @@
   h6,
   .h6 {
     @include mat-typography-level-to-styles($config, body-2);
-  }
-}
-
-// -----------------------------------------------------------------------------------------------------
-// @ Theming
-// -----------------------------------------------------------------------------------------------------
-@mixin smat-typography-theme($theme) {
-  $background: map-get($theme, 'background');
-  $accent: map-get($theme, 'accent');
-  $is-dark: map-get($theme, 'is-dark');
-
-  a {
-    color: map-get($accent, default);
-  }
-
-  code {
-    &:not(.highlight) {
-      background-color: map-get($background, 'app-bar');
-    }
-  }
-
-  .changelog {
-    .entry {
-      background-color: map-get($background, 'card');
-    }
-  }
-
-  .text-boxed {
-    @if ($is-dark) {
-      background-color: rgba(255, 255, 255, 0.12);
-      color: rgba(255, 255, 255, 0.54);
-    } @else {
-      background-color: rgba(0, 0, 0, 0.12);
-      color: rgba(0, 0, 0, 0.54);
-    }
   }
 }

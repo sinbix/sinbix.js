@@ -1,5 +1,6 @@
-@mixin sui-layout() {
-  html, body {
+@mixin sui-layout-core() {
+  html,
+  body {
     min-height: 100%;
   }
 

@@ -1,10 +1,14 @@
-@import 'scss/breakpoints';
-@import 'scss/general';
-@import 'scss/layout';
-@import 'scss/normalize';
+@import 'bourbon';
+
+@import 'scss/core/general';
+@import 'scss/core/layout';
+@import 'scss/core/normalize';
+
+@import 'scss/feat/breakpoints';
+@import 'scss/feat/layout';
 
 @mixin sui-core() {
-  @include sui-normalize();
-  @include sui-general();
-  @include sui-layout();
+  @include sui-normalize-core();
+  @include sui-general-core();
+  @include sui-layout-core();
 }

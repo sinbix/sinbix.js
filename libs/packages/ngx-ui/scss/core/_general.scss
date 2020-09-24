@@ -1,11 +1,12 @@
-@mixin sui-general() {
+@mixin sui-general-core() {
   /*----------------------------------------------------------------*/
   /*  @ Text rendering & box sizing
   /*----------------------------------------------------------------*/
   * {
     box-sizing: border-box;
 
-    &:before, &:after {
+    &:before,
+    &:after {
       box-sizing: border-box;
     }
 

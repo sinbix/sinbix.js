@@ -1,13 +1,14 @@
+@import '~@sinbix/ngx-ui-material/theming';
+
 smat-nav-h-underline {
-  flex-flow: row wrap;
   display: flex;
+  flex-flow: row wrap;
   place-content: center space-between;
   align-items: center;
   margin-bottom: -8px;
 
   > smat-nav-h-item {
     padding-bottom: 8px;
-    // flex: 1;
   }
 
   > smat-nav-h-item > smat-nav-h-children {
@@ -40,5 +41,16 @@ smat-nav-h-underline {
   > smat-nav-h-item > sui-nav-link > .nav-link:hover:after,
   > smat-nav-h-item > sui-nav-link > .nav-link:active:after {
     width: calc(100% - 2em);
+  }
+
+  > smat-nav-h-item > sui-nav-link > .nav-link > .underline-link {
+    display: flex;
+    place-content: center space-between;
+    align-items: center;
+  }
+
+  > smat-nav-h-item > sui-nav-link > .nav-link > .underline-link > .icon {
+    @include smat-icon-size(20px);
+    margin-left: 8px;
   }
 }

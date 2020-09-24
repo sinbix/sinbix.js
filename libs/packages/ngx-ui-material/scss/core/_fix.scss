@@ -1,4 +1,4 @@
-@mixin smat-material-fix() {
+@mixin smat-fix-core() {
   // Fix: "Icon button ripple radius is not correct on Edge & Safari"
   .mat-icon-button {
     .mat-button-ripple {

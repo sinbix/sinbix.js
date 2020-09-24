@@ -1,7 +1,10 @@
 <ng-container *ngFor="let item of items">
   <smat-nav-h-item [item]="item" [activeChild]="activeChild">
     <div class="underline-link">
-      {{ item.title }}
+      <span class="title">{{ item.title }}</span>
+      <mat-icon class="icon" *ngIf="item.children?.length"
+        >keyboard_arrow_down</mat-icon
+      >
     </div>
   </smat-nav-h-item>
 </ng-container>

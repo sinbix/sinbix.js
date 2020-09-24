@@ -42,6 +42,7 @@
     "@capacitor/core": "^2.4.1",
     "@datorama/akita": "^5.2.3",
     "@datorama/akita-ng-entity-service": "^5.0.2",
+    "bourbon": "^7.0.0",
     "lodash": "^4.17.20",
     "lodash-es": "^4.17.15",
     "material-design-icons": "^3.0.1",

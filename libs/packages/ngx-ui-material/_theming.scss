@@ -1,16 +1,19 @@
-@import '~@sinbix/ngx-ui/theming';
 @import '~@angular/material/theming';
 
-@import 'scss/fonts';
-@import 'scss/material-fix';
-@import 'scss/theming';
-@import 'scss/typography';
+@import '~@sinbix/ngx-ui/theming';
+
+@import 'scss/core/fonts';
+@import 'scss/core/fix';
+@import 'scss/core/typography';
+
+@import 'scss/feat/icons';
+@import 'scss/feat/theming';
+@import 'scss/feat/typography';
 
 @mixin smat-core() {
-  @include smat-fonts();
-
   @include sui-core();
+  @include smat-fonts-core();
   @include mat-core();
-  @include smat-material-fix();
-  @include smat-typography();
+  @include smat-fix-core();
+  @include smat-typography-core();
 }
