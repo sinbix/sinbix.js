@@ -1,4 +1,89 @@
-@mixin sui-layout-flex(
+@import './utils';
+
+@mixin _fx-layout-gap($gap, $direction, $wrap) {
+  $axis-x: null;
+  $axis-y: null;
+
+  @if type-of($gap) == list {
+    $axis-x: nth($gap, 1);
+    $axis-y: nth($gap, 2);
+  } @else {
+    $axis-x: $gap;
+    $axis-y: $gap;
+  }
+
+  @if ($axis-x != null and $axis-y != null) {
+    @if $wrap != 'wrap' {
+      @error "The gap can only be used with wrap";
+    }
+
+    margin: -#{$axis-y} -#{$axis-x} -#{$axis-y} -#{$axis-x};
+
+    & > * {
+      margin: #{$axis-y} #{$axis-x} #{$axis-y} #{$axis-x};
+    }
+  }
+
+  // @if ($axis-x != null and $axis-y != null) {
+  //   $top: $axis-y;
+  //   $right: $axis-x;
+  //   $bottom: $axis-y;
+  //   $left: $axis-x;
+
+  //   @if ($wrap != 'wrap') {
+  //     $right: 0;
+  //     $bottom: 0;
+  //   }
+
+  //   margin: -#{$top} -#{$right} -#{$bottom} -#{$left};
+
+  //   & > * {
+  //     margin: #{$top} #{$right} #{$bottom} #{$left};
+  //   }
+  // }
+}
+
+@mixin _fx-wrap($value) {
+  @if $value != null {
+    flex-wrap: $value;
+  }
+}
+
+@mixin _fx-layout-align-main-axis($value) {
+  @include support-value(
+    $value,
+    (null, start, center, end, space-around, space-between, space-evenly)
+  );
+
+  @if $value != null {
+    $value: if($value == start or $value == end, flex-#{$value}, $value);
+    justify-content: $value;
+  }
+}
+
+@mixin _fx-layout-align-cross-axis($value) {
+  @include support-value(
+    $value,
+    (
+      null,
+      start,
+      center,
+      end,
+      space-around,
+      space-between,
+      space-evenly,
+      stretch
+    )
+  );
+
+  @if $value != null {
+    $value: if($value == start or $value == end, flex-#{$value}, $value);
+    align-content: $value;
+    align-items: $value;
+  }
+}
+
+@mixin sui-fx-layout(
   $dir: row,
   $align: start,
   $align-vertical: stretch,
@@ -6,15 +91,6 @@
   $grid: false,
   $gap: false
 ) {
-  $horizontal: map-get(
-    $map: $align,
-    $key: 'h',
-  );
-  $vertical: map-get(
-    $map: $align,
-    $key: 'v',
-  );
-
   @if ($wrap) {
     flex-flow: $dir wrap;
   } @else {
@@ -51,6 +127,195 @@
 
   display: flex;
 
-  place-content: $vertical $horizontal;
-  align-items: $vertical;
+  place-content: $align-vertical $align;
+  align-items: $align-vertical;
+}
+
+$_fx-layout-current-direction: null;
+
+// (row wrap, center center, 10px grid)
+@mixin fx-layout($direction-wrap: row, $axis: null, $layout-gap-value: null) {
+  $direction: row;
+  $wrap: null;
+  $main-axis-value: null;
+  $cross-axis-value: null;
+
+  @if type-of($direction-wrap) == string {
+    $direction: $direction-wrap;
+  } @else if type-of($direction-wrap) == list {
+    $direction: nth($direction-wrap, 1);
+    $wrap: nth($direction-wrap, 2);
+  }
+
+  @if $axis != null {
+    @if type-of($axis) == list {
+      $main-axis-value: nth($axis, 1);
+      $cross-axis-value: nth($axis, 2);
+    } @else if type-of($axis) == string {
+      $main-axis-value: $axis;
+      $cross-axis-value: stretch;
+    }
+  }
+
+  @include support-value(
+    $direction,
+    (row, column, row-reverse, column-reverse)
+  );
+  @include support-value($wrap, (wrap, null));
+
+  $max-cross: if(
+    $direction == column or $direction == column-reverse,
+    width,
+    height
+  );
+  $_fx-layout-current-direction: $direction !global;
+
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: $direction;
+  @include _fx-layout-align-main-axis($main-axis-value);
+  @include _fx-layout-align-cross-axis($cross-axis-value);
+  @include _fx-wrap($wrap);
+  @include _fx-layout-gap($layout-gap-value, $direction, $wrap);
+  @if $cross-axis-value != null {
+    max-#{$max-cross}: 100%;
+  }
+}
+
+@mixin fx-flex($params: '', $parent-direction: null) {
+  $parent-direction: if(
+    $parent-direction != null,
+    $parent-direction,
+    if(
+      $_fx-layout-current-direction != null,
+      $_fx-layout-current-direction,
+      row
+    )
+  );
+
+  @include support-value(
+    $parent-direction,
+    (row, column, row-reverse, column-reverse)
+  );
+
+  $grow: 1;
+  $shrink: 1;
+  $basis: 0%;
+  $min-value: null;
+  $max-value: null;
+  $max-cross: if(
+    $parent-direction == column or $parent-direction == column-reverse,
+    height,
+    width
+  );
+
+  @if type-of($params) == string {
+    @include support-value(
+      $params,
+      ('', none, nogrow, grow, initial, auto, noshrink)
+    );
+    @if $params == '' {
+      //  default 값 사용
+    } @else if $params == none {
+      $grow: 0;
+      $shrink: 0;
+      $basis: auto;
+    } @else if $params == nogrow {
+      $grow: 0;
+      $shrink: 1;
+      $basis: auto;
+    } @else if $params == grow {
+      $grow: 1;
+      $shrink: 1;
+      $basis: 100%;
+      $max-value: 100%;
+    } @else if $params == initial {
+      $grow: 0;
+      $shrink: 1;
+      $basis: auto;
+    } @else if $params == auto {
+      $grow: 1;
+      $shrink: 1;
+      $basis: auto;
+      $min-value: auto;
+    } @else if $params == noshrink {
+      $grow: 1;
+      $shrink: 0;
+      $basis: auto;
+    }
+  } @else if type-of($params) == number {
+    @include support-value(unit($params), ('', '%', px, vh, vw));
+    @if $params != 0 {
+      $params: if(unitless($params), $params + '%', $params);
+      $basis: $params;
+      $max-value: $basis;
+      $min-value: if(unit($basis) == px, $basis, null);
+    }
+  } @else if type-of($params) == list {
+    $grow: nth($params, 1);
+    $shrink: nth($params, 2);
+    $basis: nth($params, 3);
+  }
+
+  box-sizing: border-box;
+  flex-grow: $grow;
+  flex-shrink: $shrink;
+  flex-basis: $basis;
+
+  @if $max-value != null {
+    max-#{$max-cross}: $max-value;
+  }
+  @if $min-value != null {
+    min-#{$max-cross}: $min-value;
+  }
+}
+
+@mixin fx-flex-order($order: 0) {
+  @include support-int($order);
+  order: $order;
+}
+
+@mixin fx-flex-offset($offset, $parent-direction: null) {
+  $parent-direction: if(
+    $parent-direction != null,
+    $parent-direction,
+    if(
+      $_fx-layout-current-direction != null,
+      $_fx-layout-current-direction,
+      row
+    )
+  );
+
+  @include support-value(unit($offset), ('', '%', px, vh, vw));
+  @include support-value(
+    $parent-direction,
+    (row, column, row-reverse, column-reverse)
+  );
+
+  $offset: if(unitless($offset), $offset + '%', $offset);
+  $margin-direction: if(
+    $parent-direction == column or $parent-direction == column-reverse,
+    top,
+    left
+  );
+
+  margin-#{$margin-direction}: $offset;
+}
+
+@mixin fx-flex-align($align) {
+  @include support-value($align, (start, center, end, baseline, stretch));
+  $align: if($align == start or $align == end, flex-#{$align}, $align);
+  align-self: $align;
+}
+
+@mixin fx-flex-fill {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+@mixin fx-fill {
+  @include fx-flex-fill;
 }

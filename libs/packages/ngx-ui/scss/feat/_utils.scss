@@ -1,0 +1,15 @@
+@mixin support-value($value, $list) {
+  @if index($list, $value) == null {
+    @error "not support #{$value}. possible values #{$list}";
+  }
+}
+
+@mixin support-int($value) {
+  @if type-of($value) != number or unit($value) != '' {
+    @error "not support #{$value} only int";
+  }
+}
+
+@mixin  support- {
+  
+}

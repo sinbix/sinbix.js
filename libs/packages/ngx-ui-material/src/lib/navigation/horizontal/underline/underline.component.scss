@@ -1,15 +1,7 @@
 @import '~@sinbix/ngx-ui-material/theming';
 
 smat-nav-h-underline {
-  display: flex;
-  flex-flow: row wrap;
-  place-content: center space-between;
-  align-items: center;
-  margin-bottom: -8px;
-
-  > smat-nav-h-item {
-    padding-bottom: 8px;
-  }
+  @include fx-layout(row wrap, space-between center, 8px 0);
 
   > smat-nav-h-item > smat-nav-h-children {
     padding-top: 8px;
