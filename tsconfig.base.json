@@ -51,7 +51,9 @@
       "@sinbix/models/*": ["libs/packages/models/src/lib/*"],
       "@sinbix/docs-ngx-frontend/components-feat-main": [
         "libs/apps/docs/ngx-frontend/components/feat-main/src/index.ts"
-      ]
+      ],
+      "@sinbix/angular": ["libs/plugins/angular/src/index.ts"],
+      "@sinbix/nest": ["libs/plugins/nest/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,0 +1,12 @@
+{
+  "$schema": "../../../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "name": "plugins-nest",
+  "version": "0.0.1",
+  "schematics": {
+    "plugins-nest": {
+      "factory": "./src/schematics/plugins-nest/schematic",
+      "schema": "./src/schematics/plugins-nest/schema.json",
+      "description": "plugins-nest schematic"
+    }
+  }
+}

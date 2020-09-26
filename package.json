@@ -64,6 +64,7 @@
     "@nrwl/eslint-plugin-nx": "10.2.1",
     "@nrwl/jest": "10.2.1",
     "@nrwl/node": "10.2.1",
+    "@nrwl/nx-plugin": "^10.2.1",
     "@nrwl/workspace": "10.2.1",
     "@types/jest": "26.0.8",
     "@types/lodash": "^4.14.161",
