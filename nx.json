@@ -47,7 +47,7 @@
     "docs-ngx-frontend": {
       "tags": []
     },
-    "docs/ngx-frontend-e2e": {
+    "docs-ngx-frontend-e2e": {
       "tags": [],
       "implicitDependencies": ["docs-ngx-frontend"]
     },

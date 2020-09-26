@@ -439,7 +439,7 @@
         }
       }
     },
-    "docs/ngx-frontend-e2e": {
+    "docs-ngx-frontend-e2e": {
       "root": "apps/docs/ngx-frontend-e2e",
       "sourceRoot": "apps/docs/ngx-frontend-e2e/src",
       "projectType": "application",
