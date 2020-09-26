@@ -11,6 +11,10 @@ import { DocsComponentsComponent } from './components.component';
         path: '',
         component: DocsComponentsComponent,
       },
+      {
+        path: '**',
+        redirectTo: '',
+      },
     ]),
   ],
   declarations: [DocsComponentsComponent],

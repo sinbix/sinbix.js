@@ -1,14 +1,31 @@
-smat-nav-h-buttons {
-  flex-flow: row wrap;
-  display: flex;
-  place-content: center space-between;
-  align-items: center;
+@import '~@sinbix/ngx-ui-material/theming';
 
-  > smat-nav-h-item {
-    flex: 1;
+smat-nav-h-buttons {
+  @include fx-layout(row, space-between center);
+
+  > smat-nav-h-item
+    > sui-nav-link
+    > .nav-link
+    > .button-link.button-link-parent {
+    position: relative;
   }
 
-  > smat-nav-h-item > sui-nav-link > .nav-link > .nav-h-button {
-    width: 100%;
+  > smat-nav-h-item
+    > sui-nav-link
+    > .nav-link
+    > .button-link.button-link-parent
+    > .mat-button-wrapper {
+    padding-right: 24px;
+  }
+
+  > smat-nav-h-item
+    > sui-nav-link
+    > .nav-link
+    > .button-link.button-link-parent
+    > .mat-button-wrapper
+    .arrow-down {
+    @include smat-icon-size(20px);
+    right: 8px;
+    position: absolute;
   }
 }

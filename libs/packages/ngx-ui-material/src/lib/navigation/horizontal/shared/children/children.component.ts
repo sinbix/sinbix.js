@@ -50,6 +50,8 @@ export class NavHChildrenComponent implements OnInit, OnDestroy {
 
   @HostBinding('@animate') animate = true;
 
+  @HostBinding('class.lock-events') _lockEvents = false;
+
   @Input() pivot: IPoint;
 
   private unsubscribeAll = new Subject();
@@ -73,6 +75,7 @@ export class NavHChildrenComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    // this.lockEvents = true;
     this.unsubscribeAll.next();
     this.unsubscribeAll.complete();
   }
@@ -83,6 +86,10 @@ export class NavHChildrenComponent implements OnInit, OnDestroy {
     const offset = this.level > 1 ? 100 : 0;
 
     return this.prefDir === prefDir ? (offset ? `${offset}%` : 0) : 'auto';
+  }
+
+  lockEvents() {
+    this._lockEvents = true;
   }
 
   private checkDir(rootWidth: number) {

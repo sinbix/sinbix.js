@@ -8,10 +8,14 @@ import {
   HostListener,
   ViewEncapsulation,
   Renderer2,
+  OnDestroy
 } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 import { TCssClasses } from '@sinbix/models/common';
 import { INavItem } from '@sinbix/models/navigation';
+import { Subject } from 'rxjs';
+import { filter, takeUntil } from 'rxjs/operators';
 import { EPrefDir, IPoint } from '../../horizontal.models';
 
 @Component({
@@ -20,7 +24,7 @@ import { EPrefDir, IPoint } from '../../horizontal.models';
   styleUrls: ['./item.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class NavHItemComponent implements OnInit {
+export class NavHItemComponent implements OnInit, OnDestroy {
   @Input() item: INavItem;
   @Input() activeParent: TCssClasses;
   @Input() activeChild: TCssClasses;
@@ -33,13 +37,29 @@ export class NavHItemComponent implements OnInit {
 
   pivot: IPoint;
 
+  private unsubscribeAll = new Subject();
+
   constructor(
     private elRef: ElementRef<HTMLElement>,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.root = !this.level;
+    this.router.events
+      .pipe(
+        filter((event) => event instanceof NavigationEnd),
+        takeUntil(this.unsubscribeAll)
+      )
+      .subscribe((event: NavigationEnd) => {
+        this.mouseleave();
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribeAll.next();
+    this.unsubscribeAll.complete();
   }
 
   @HostListener('mouseenter', ['$event'])
