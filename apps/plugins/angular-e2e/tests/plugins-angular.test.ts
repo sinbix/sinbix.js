@@ -8,7 +8,6 @@ import {
 describe('plugins-angular e2e', () => {
   it('should create plugins-angular', async (done) => {
     const plugin = uniq('plugins-angular');
-    console.log('gi');
     ensureNxProject('@sinbix/angular', 'dist/libs/plugins/angular');
     await runNxCommandAsync(
       `generate @sinbix/angular:pluginsAngular ${plugin}`

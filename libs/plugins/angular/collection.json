@@ -3,10 +3,10 @@
   "name": "plugins-angular",
   "version": "0.0.1",
   "schematics": {
-    "plugins-angular": {
-      "factory": "./src/schematics/plugins-angular/schematic",
-      "schema": "./src/schematics/plugins-angular/schema.json",
-      "description": "plugins-angular schematic"
+    "app": {
+      "factory": "./src/schematics/app/schematic",
+      "schema": "./src/schematics/app/schema.json",
+      "description": "app schematic"
     }
   }
 }

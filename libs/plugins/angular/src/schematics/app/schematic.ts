@@ -16,14 +16,14 @@ import {
   toFileName,
   updateWorkspace,
 } from '@nrwl/workspace';
-import { PluginsAngularSchematicSchema } from './schema';
+import { AppAngularSchematicSchema } from './schema';
 
 /**
  * Depending on your needs, you can change this to either `Library` or `Application`
  */
 const projectType = ProjectType.Library;
 
-interface NormalizedSchema extends PluginsAngularSchematicSchema {
+interface NormalizedSchema extends AppAngularSchematicSchema {
   projectName: string;
   projectRoot: string;
   projectDirectory: string;
@@ -31,7 +31,7 @@ interface NormalizedSchema extends PluginsAngularSchematicSchema {
 }
 
 function normalizeOptions(
-  options: PluginsAngularSchematicSchema
+  options: AppAngularSchematicSchema
 ): NormalizedSchema {
   const name = toFileName(options.name);
   const projectDirectory = options.directory
@@ -65,7 +65,7 @@ function addFiles(options: NormalizedSchema): Rule {
   );
 }
 
-export default function (options: PluginsAngularSchematicSchema): Rule {
+export default function (options: AppAngularSchematicSchema): Rule {
   const normalizedOptions = normalizeOptions(options);
   return chain([
     updateWorkspace((workspace) => {
