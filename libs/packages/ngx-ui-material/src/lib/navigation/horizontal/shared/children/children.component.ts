@@ -46,11 +46,11 @@ export class NavHChildrenComponent implements OnInit, OnDestroy {
   @Input() level: number;
   @Input() prefDir: EPrefDir;
 
-  @HostBinding('style') style: {};
+  @HostBinding('style') style = {};
 
   @HostBinding('@animate') animate = true;
 
-  @HostBinding('class.lock-events') _lockEvents = false;
+  @HostBinding('class.lock-events') lockEvents = false;
 
   @Input() pivot: IPoint;
 
@@ -75,21 +75,14 @@ export class NavHChildrenComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    // this.lockEvents = true;
     this.unsubscribeAll.next();
     this.unsubscribeAll.complete();
   }
-
-  defineStyle() {}
 
   private calcOffset(prefDir: EPrefDir) {
     const offset = this.level > 1 ? 100 : 0;
 
     return this.prefDir === prefDir ? (offset ? `${offset}%` : 0) : 'auto';
-  }
-
-  lockEvents() {
-    this._lockEvents = true;
   }
 
   private checkDir(rootWidth: number) {
