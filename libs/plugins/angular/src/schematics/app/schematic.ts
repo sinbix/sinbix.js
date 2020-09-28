@@ -78,7 +78,7 @@ export default function (options: AppAngularSchematicSchema): Rule {
         })
         .targets.add({
           name: 'build',
-          builder: '@sinbix/plugins-angular:build',
+          builder: '@sinbix/angular:build',
         });
     }),
     addProjectToNxJsonInTree(normalizedOptions.projectName, {
