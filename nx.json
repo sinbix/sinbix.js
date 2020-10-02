@@ -17,7 +17,11 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test"
+        ]
       }
     }
   },
@@ -39,7 +43,9 @@
     },
     "packages-ngx-ui-material": {
       "tags": [],
-      "implicitDependencies": ["packages-ngx-ui"]
+      "implicitDependencies": [
+        "packages-ngx-ui"
+      ]
     },
     "packages-ngx-feat-ui-material-akita": {
       "tags": []
@@ -49,10 +55,9 @@
     },
     "docs-ngx-frontend-e2e": {
       "tags": [],
-      "implicitDependencies": ["docs-ngx-frontend"]
-    },
-    "apps-docs-ngx-frontend-shell": {
-      "tags": []
+      "implicitDependencies": [
+        "docs-ngx-frontend"
+      ]
     },
     "apps-docs-ngx-frontend-feat-main": {
       "tags": []
@@ -71,14 +76,21 @@
     },
     "plugins-angular-e2e": {
       "tags": [],
-      "implicitDependencies": ["plugins-angular"]
+      "implicitDependencies": [
+        "plugins-angular"
+      ]
     },
     "plugins-nest": {
       "tags": []
     },
     "plugins-nest-e2e": {
       "tags": [],
-      "implicitDependencies": ["plugins-nest"]
+      "implicitDependencies": [
+        "plugins-nest"
+      ]
+    },
+    "apps-docs-ngx-frontend-feat-shell": {
+      "tags": []
     }
   }
 }

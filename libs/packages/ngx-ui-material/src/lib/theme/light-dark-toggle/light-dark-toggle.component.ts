@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { TMaterialColor } from '@sinbix/ngx-ui-material/common';
+import { ThemePalette } from '@angular/material/core';
 import { TLightDarkTheme } from './light-dark-toggle.model';
 
 @Component({
@@ -10,7 +10,7 @@ import { TLightDarkTheme } from './light-dark-toggle.model';
 export class LightDarkToggleComponent implements OnInit {
   @Output() toggleEvent = new EventEmitter<boolean>();
 
-  @Input() color: TMaterialColor;
+  @Input() color: ThemePalette;
 
   @Input() isDark = false;
 

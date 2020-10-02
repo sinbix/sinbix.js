@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppModule } from './app.module';
-import { DocsShellComponent } from '@sinbix/docs-ngx-frontend/shell';
+import { DocsShellComponent } from '@sinbix/docs-ngx-frontend/feat-shell';
 
 @NgModule({
   imports: [BrowserModule, BrowserAnimationsModule, AppModule],
