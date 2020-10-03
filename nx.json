@@ -65,9 +65,6 @@
     "apps-docs-ngx-frontend-feat-home": {
       "tags": []
     },
-    "packages-models": {
-      "tags": []
-    },
     "apps-docs-ngx-frontend-components-feat-main": {
       "tags": []
     },
@@ -90,6 +87,9 @@
       ]
     },
     "apps-docs-ngx-frontend-feat-shell": {
+      "tags": []
+    },
+    "packages-common": {
       "tags": []
     }
   }

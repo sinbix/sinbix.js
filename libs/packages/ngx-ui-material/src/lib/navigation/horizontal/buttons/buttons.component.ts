@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
-import { TCssClasses } from '@sinbix/models/common';
-import { INavItem } from '@sinbix/models/navigation';
+import { TCssClasses } from '@sinbix/common/common';
+import { INavItem } from '@sinbix/common/navigation';
 
 @Component({
   selector: 'smat-nav-h-buttons',

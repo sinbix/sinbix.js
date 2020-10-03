@@ -12,8 +12,8 @@ import {
 } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 
-import { TCssClasses } from '@sinbix/models/common';
-import { INavItem } from '@sinbix/models/navigation';
+import { TCssClasses } from '@sinbix/common/common';
+import { INavItem } from '@sinbix/common/navigation';
 import { Subject } from 'rxjs';
 import { filter, takeUntil } from 'rxjs/operators';
 import { EPrefDir, IPoint } from '../../horizontal.models';

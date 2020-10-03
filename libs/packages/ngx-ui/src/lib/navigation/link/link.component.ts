@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 import { bunchHandler } from '@sinbix/utils/bunch';
 import { NavigationService } from '@sinbix/ngx-utils/navigation';
-import { TCssClasses } from '@sinbix/models/common';
+import { TCssClasses } from '@sinbix/common/common';
 
 @Component({
   selector: 'sui-nav-link',

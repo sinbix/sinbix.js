@@ -1,5 +1,5 @@
 import * as _ from 'lodash-es';
-import { TBunch, IBunchCallback } from '@sinbix/common/bunch';
+import { IBunchCallback, TBunch } from '../types';
 
 export function bunchHandler(
   bunch: TBunch<any>,

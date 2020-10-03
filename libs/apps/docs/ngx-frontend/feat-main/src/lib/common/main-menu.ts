@@ -1,4 +1,4 @@
-import { INavItem } from '@sinbix/models/navigation';
+import { INavItem } from '@sinbix/common/navigation';
 
 // export const mainMenu: INavItem[] = [
 //   {

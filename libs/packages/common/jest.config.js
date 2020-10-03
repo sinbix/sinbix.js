@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'packages-models',
+  name: 'packages-common',
   preset: '../../../jest.config.js',
   globals: {
     'ts-jest': {
@@ -10,5 +10,5 @@ module.exports = {
     '^.+\\.[tj]sx?$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../../coverage/libs/packages/models',
+  coverageDirectory: '../../../coverage/libs/packages/common',
 };
