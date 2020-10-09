@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
-import { INavItem } from '@sinbix/common/navigation';
-import { TCssClasses } from '@sinbix/common/common';
+import { TCssClasses, INavItem } from '@sinbix/common/types';
 
 @Component({
   selector: 'smat-nav-h-underline',

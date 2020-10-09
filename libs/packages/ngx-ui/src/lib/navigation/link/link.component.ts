@@ -8,9 +8,9 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
-import { bunchHandler } from '@sinbix/utils/bunch';
+import { bunchHandler } from '@sinbix/common/utils';
 import { NavigationService } from '@sinbix/ngx-utils/navigation';
-import { TCssClasses } from '@sinbix/common/common';
+import { TCssClasses } from '@sinbix/common/types';
 
 @Component({
   selector: 'sui-nav-link',

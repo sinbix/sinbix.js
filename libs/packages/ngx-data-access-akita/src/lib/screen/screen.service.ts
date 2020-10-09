@@ -1,7 +1,7 @@
 import * as _ from 'lodash';
 import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser, DOCUMENT } from '@angular/common';
-import { Debounce } from '@sinbix/utils/debounce';
+import { Debounce } from '@sinbix/common/decorators';
 import { ScreenStore } from './screen.store';
 import { IScreen } from './screen.model';
 

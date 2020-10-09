@@ -13,8 +13,7 @@ import { trigger, transition, useAnimation } from '@angular/animations';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { INavItem } from '@sinbix/common/navigation';
-import { TCssClasses } from '@sinbix/common/common';
+import { TCssClasses, INavItem } from '@sinbix/common/types';
 import { ScreenQuery } from '@sinbix/ngx-data-access-akita/screen';
 import { fadeInRight, fadeOutLeft } from '@sinbix/ngx-ui/animate';
 

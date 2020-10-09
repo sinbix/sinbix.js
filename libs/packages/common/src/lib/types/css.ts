@@ -1,3 +1,3 @@
-import { TBunch } from '../utils';
+import { TBunch } from './bunch';
 
 export type TCssClasses = TBunch<string>;
