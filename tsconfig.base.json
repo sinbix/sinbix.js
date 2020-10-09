@@ -47,13 +47,13 @@
       "@sinbix/docs-ngx-frontend/components-feat-main": [
         "libs/apps/docs/ngx-frontend/components/feat-main/src/index.ts"
       ],
-      "@sinbix/angular": ["libs/plugins/angular/src/index.ts"],
-      "@sinbix/nest": ["libs/plugins/nest/src/index.ts"],
       "@sinbix/docs-ngx-frontend/feat-shell": [
         "libs/apps/docs/ngx-frontend/feat-shell/src/index.ts"
       ],
       "@sinbix/common": ["libs/packages/common/src/index.ts"],
-      "@sinbix/common/*": ["libs/packages/common/src/lib/*"]
+      "@sinbix/common/*": ["libs/packages/common/src/lib/*"],
+      "@sinbix/angular": ["libs/packages/angular/src/index.ts"],
+      "@sinbix/angular/*": ["libs/packages/angular/src/lib/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
