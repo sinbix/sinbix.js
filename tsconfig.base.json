@@ -55,7 +55,8 @@
       "@sinbix/angular": ["libs/packages/angular/src/index.ts"],
       "@sinbix/angular/*": ["libs/packages/angular/src/lib/*"],
       "@sinbix/ng-material": ["libs/packages/ng-material/src/index.ts"],
-      "@sinbix/ng-material/*": ["libs/packages/ng-material/src/lib/*"]
+      "@sinbix/ng-material/*": ["libs/packages/ng-material/src/lib/*"],
+      "@sinbix/angular-ui": ["libs/packages/angular-ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

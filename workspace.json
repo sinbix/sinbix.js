@@ -683,6 +683,48 @@
           "style": "scss"
         }
       }
+    },
+    "packages-angular-ui": {
+      "projectType": "library",
+      "root": "libs/packages/angular-ui",
+      "sourceRoot": "libs/packages/angular-ui/src",
+      "prefix": "sinbix",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/packages/angular-ui/tsconfig.lib.json",
+            "project": "libs/packages/angular-ui/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/packages/angular-ui/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/packages/angular-ui/tsconfig.lib.json",
+              "libs/packages/angular-ui/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/packages/angular-ui/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/packages/angular-ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {
