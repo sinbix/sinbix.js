@@ -53,7 +53,9 @@
       "@sinbix/common": ["libs/packages/common/src/index.ts"],
       "@sinbix/common/*": ["libs/packages/common/src/lib/*"],
       "@sinbix/angular": ["libs/packages/angular/src/index.ts"],
-      "@sinbix/angular/*": ["libs/packages/angular/src/lib/*"]
+      "@sinbix/angular/*": ["libs/packages/angular/src/lib/*"],
+      "@sinbix/ng-material": ["libs/packages/ng-material/src/index.ts"],
+      "@sinbix/ng-material/*": ["libs/packages/ng-material/src/lib/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

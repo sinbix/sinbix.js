@@ -65,6 +65,9 @@
     },
     "packages-angular": {
       "tags": []
+    },
+    "packages-ng-material": {
+      "tags": []
     }
   }
 }

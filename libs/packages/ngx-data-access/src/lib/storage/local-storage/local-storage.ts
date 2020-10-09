@@ -10,7 +10,6 @@ export class LocalStorage implements IStorage {
   }
   async key(index: number): Promise<string> {
     const keys = (await StorageCap.keys())?.keys ?? [];
-
     return index >= 0 && keys.length < index ? keys[index] : null;
   }
   async removeItem(key: string): Promise<void> {

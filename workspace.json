@@ -641,6 +641,48 @@
           "style": "scss"
         }
       }
+    },
+    "packages-ng-material": {
+      "projectType": "library",
+      "root": "libs/packages/ng-material",
+      "sourceRoot": "libs/packages/ng-material/src",
+      "prefix": "sinbix",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/packages/ng-material/tsconfig.lib.json",
+            "project": "libs/packages/ng-material/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/packages/ng-material/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/packages/ng-material/tsconfig.lib.json",
+              "libs/packages/ng-material/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/packages/ng-material/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/packages/ng-material/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {
