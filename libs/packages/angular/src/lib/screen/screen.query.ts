@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Query } from '@datorama/akita';
+
 import { IScreen } from './screen.model';
 import { ScreenStore } from './screen.store';
 

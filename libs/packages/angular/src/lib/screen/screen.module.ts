@@ -1,4 +1,5 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
+
 import { ScreenService } from './screen.service';
 import { ScreenStore } from './screen.store';
 import { ScreenQuery } from './screen.query';
