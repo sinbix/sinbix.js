@@ -646,7 +646,7 @@
       "projectType": "library",
       "root": "libs/packages/ng-material",
       "sourceRoot": "libs/packages/ng-material/src",
-      "prefix": "sinbix",
+      "prefix": "smat",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
