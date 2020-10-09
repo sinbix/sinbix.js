@@ -57,20 +57,6 @@
     "apps-docs-ngx-frontend-components-feat-main": {
       "tags": []
     },
-    "plugins-angular": {
-      "tags": []
-    },
-    "plugins-angular-e2e": {
-      "tags": [],
-      "implicitDependencies": ["plugins-angular"]
-    },
-    "plugins-nest": {
-      "tags": []
-    },
-    "plugins-nest-e2e": {
-      "tags": [],
-      "implicitDependencies": ["plugins-nest"]
-    },
     "apps-docs-ngx-frontend-feat-shell": {
       "tags": []
     },
