@@ -1,1 +1,1 @@
-export * from './lib/packages-angular.module';
+export default {};
