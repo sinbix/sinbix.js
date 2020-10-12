@@ -1,4 +1,4 @@
-import { ITheme } from '@sinbix/ngx-data-access-akita/theme';
+import { ITheme } from '@sinbix/angular/theme';
 
 export const THEMES: ITheme[] = [
   {

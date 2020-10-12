@@ -1,5 +1,0 @@
-{
-  "lib": {
-    "entryFile": "../src/lib/renderer/index.ts"
-  }
-}

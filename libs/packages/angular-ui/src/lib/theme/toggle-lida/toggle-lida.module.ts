@@ -10,6 +10,6 @@ import { ThemeToggleLidaDumbComponent } from './dumb/dumb.component';
 @NgModule({
   declarations: [ThemeToggleLidaComponent, ThemeToggleLidaDumbComponent],
   imports: [CommonModule, MatButtonModule, MatSlideToggleModule, MatIconModule],
-  exports: [ThemeToggleLidaComponent],
+  exports: [ThemeToggleLidaComponent, ThemeToggleLidaDumbComponent],
 })
 export class ThemeToggleLidaModule {}

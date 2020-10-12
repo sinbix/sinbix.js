@@ -16,28 +16,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@sinbix/ngx-utils": ["libs/packages/ngx-utils/src/index.ts"],
-      "@sinbix/ngx-utils/*": ["libs/packages/ngx-utils/src/lib/*"],
-      "@sinbix/ngx-ui": ["libs/packages/ngx-ui/src/index.ts"],
-      "@sinbix/ngx-ui/*": ["libs/packages/ngx-ui/src/lib/*"],
-      "@sinbix/utils": ["libs/packages/utils/src/index.ts"],
-      "@sinbix/utils/*": ["libs/packages/utils/src/lib/*"],
-      "@sinbix/ngx-data-access": ["libs/packages/ngx-data-access/src/index.ts"],
-      "@sinbix/ngx-data-access/*": ["libs/packages/ngx-data-access/src/lib/*"],
-      "@sinbix/ngx-data-access-akita": [
-        "libs/packages/ngx-data-access-akita/src/index.ts"
-      ],
-      "@sinbix/ngx-data-access-akita/*": [
-        "libs/packages/ngx-data-access-akita/src/lib/*"
-      ],
-      "@sinbix/ngx-ui-material": ["libs/packages/ngx-ui-material/src/index.ts"],
-      "@sinbix/ngx-ui-material/*": ["libs/packages/ngx-ui-material/src/lib/*"],
-      "@sinbix/ngx-feat-ui-material-akita": [
-        "libs/packages/ngx-feat-ui-material-akita/src/index.ts"
-      ],
-      "@sinbix/ngx-feat-ui-material-akita/*": [
-        "libs/packages/ngx-feat-ui-material-akita/src/lib/*"
-      ],
       "@sinbix/docs-ngx-frontend/feat-main": [
         "libs/apps/docs/ngx-frontend/feat-main/src/index.ts"
       ],
@@ -54,7 +32,6 @@
       "@sinbix/common/*": ["libs/packages/common/src/lib/*"],
       "@sinbix/angular": ["libs/packages/angular/src/index.ts"],
       "@sinbix/angular/*": ["libs/packages/angular/src/lib/*"],
-      "@sinbix/ng-material": ["libs/packages/ng-material/src/index.ts"],
       "@sinbix/angular-ui/*": ["libs/packages/angular-ui/src/lib/*"],
       "@sinbix/angular-ui": ["libs/packages/angular-ui/src/index.ts"]
     }

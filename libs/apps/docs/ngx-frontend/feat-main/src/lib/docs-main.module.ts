@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
-import { MatNavHUnderlineModule } from '@sinbix/ngx-ui-material/navigation';
+// import { MatNavHUnderlineModule } from '@sinbix/ngx-ui-material/navigation';
 import { NavHButtonsModule } from '@sinbix/angular-ui/nav';
 import { ThemeToggleLidaModule } from '@sinbix/angular-ui/theme';
-import { NgxFeatUiMatThemeModule } from '@sinbix/ngx-feat-ui-material-akita/theme';
+// import { NgxFeatUiMatThemeModule } from '@sinbix/ngx-feat-ui-material-akita/theme';
 
 import { DocsMainComponent } from './docs-main.component';
 import { HeaderComponent } from './header/header.component';
@@ -38,7 +38,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     MatButtonModule,
-    NgxFeatUiMatThemeModule,
+    // NgxFeatUiMatThemeModule,
     // MatNavHUnderlineModule,
     NavHButtonsModule,
     ThemeToggleLidaModule

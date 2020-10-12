@@ -22,25 +22,6 @@
     }
   },
   "projects": {
-    "packages-ngx-utils": {
-      "tags": []
-    },
-    "packages-ngx-ui": {
-      "tags": []
-    },
-    "packages-ngx-data-access": {
-      "tags": []
-    },
-    "packages-ngx-data-access-akita": {
-      "tags": []
-    },
-    "packages-ngx-ui-material": {
-      "tags": [],
-      "implicitDependencies": ["packages-ngx-ui"]
-    },
-    "packages-ngx-feat-ui-material-akita": {
-      "tags": []
-    },
     "docs-ngx-frontend": {
       "tags": []
     },
