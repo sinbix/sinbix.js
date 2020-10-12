@@ -6,6 +6,10 @@ export default (config: webpack.Configuration) => {
     __dirname,
     'ngx-ui/_theming'
   );
+  config.resolve.alias['@sinbix/angular-ui/theming'] = path.resolve(
+    __dirname,
+    'angular-ui/_theming'
+  );
   config.resolve.alias['@sinbix/ngx-ui-material/theming'] = path.resolve(
     __dirname,
     'ngx-ui-material/_theming'

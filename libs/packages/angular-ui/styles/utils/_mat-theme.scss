@@ -1,0 +1,228 @@
+// Material color hues list
+$matHues: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 'A100', 'A200',
+  'A400', 'A700';
+
+// instead of creating a theme with mat-light-theme like a sane person, we will create our own theme-creating function that lets us apply our own foreground and background palettes.
+@mixin mat-theme(
+  $colors: (
+    warn: mat-palette($mat-red),
+  ),
+  $is-dark: false
+) {
+  $primary: map-get($colors, 'primary');
+  $accent: map-get($colors, 'accent');
+  $warn: map-get($colors, 'wran');
+  $foreground: map-get($colors, 'foreground');
+  $background: map-get($colors, 'background');
+  $extra: map-get($colors, 'extra');
+
+  $default-foreground: $mat-light-theme-foreground;
+  $default-background: $mat-light-theme-background;
+
+  @if ($is-dark) {
+    $default-foreground: $mat-dark-theme-foreground;
+    $default-background: $mat-dark-theme-background;
+  }
+
+  $theme: ();
+
+  @if ($is-dark) {
+    $theme: mat-dark-theme($primary, $accent, $warn);
+  } @else {
+    $theme: mat-light-theme($primary, $accent, $warn);
+  }
+
+  @if ($foreground) {
+    $theme: map-merge(
+      $theme,
+      (
+        'foreground': $foreground,
+      )
+    );
+  }
+
+  @if ($background) {
+    $theme: map-merge(
+      $theme,
+      (
+        'background': $background,
+      )
+    );
+  }
+
+  @include angular-material-theme($theme);
+
+  $palettes: (
+    'primary': $primary,
+    'accent': $accent,
+    'warn': $warn,
+  );
+
+  @if ($extra) {
+    $palettes: map-merge($palettes, $extra);
+  }
+
+  $foreground: map-get($theme, 'foreground');
+  $background: map-get($theme, 'background');
+
+  @include color-classes($palettes, $foreground, $background);
+  @include colors-theme($theme);
+}
+
+@mixin generate-bg-classes($name, $color) {
+  ._#{$name}-bg {
+    background-color: $color !important;
+  }
+}
+
+@mixin generate-fg-classes($name, $color) {
+  ._#{$name}-fg {
+    color: $color !important;
+  }
+}
+
+@mixin generate-border-classes($name, $color) {
+  ._#{$name}-border {
+    border-color: $color !important;
+  }
+
+  ._#{$name}-border-top {
+    border-top-color: $color !important;
+  }
+
+  ._#{$name}-border-right {
+    border-right-color: $color !important;
+  }
+
+  ._#{$name}-border-bottom {
+    border-bottom-color: $color !important;
+  }
+
+  ._#{$name}-border-left {
+    border-left-color: $color !important;
+  }
+}
+
+@mixin generate-common($color, $contrast) {
+  & {
+    &,
+    &:not([disabled]),
+    &:not(.mat-stroked-button) {
+      background-color: $color !important;
+      color: $contrast !important;
+    }
+
+    &.mat-stroked-button:not([disabled]) {
+      border-color: $color !important;
+    }
+
+    a {
+      color: $contrast;
+      &.uppercase {
+        text-transform: uppercase !important;
+      }
+    }
+
+    .mat-ripple-element {
+      background: rgba($contrast, 0.1);
+    }
+
+    .mat-button,
+    .mat-icon-button,
+    .mat-stroked-button {
+      &.mat-ripple-element,
+      .mat-ripple-element {
+        background: $contrast;
+      }
+    }
+  }
+}
+
+@mixin generate-common-classes($name, $color, $contrast) {
+  ._#{$name} {
+    @include generate-common($color, $contrast);
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ Color classes generator
+// -----------------------------------------------------------------------------------------------------
+@mixin generate-color-classes($name, $color, $contrast) {
+  @include generate-bg-classes($name, $color);
+
+  @include generate-common-classes($name, $color, $contrast);
+
+  @include generate-fg-classes($name, $color);
+
+  @include generate-border-classes($name, $color);
+}
+
+@mixin color-classes($palettes, $foreground, $background) {
+  // Generate the color classes...
+  @each $paletteName, $palette in $palettes {
+    @if ($palette) {
+      // Get the contrasts map
+      $contrasts: map-get($palette, 'contrast');
+
+      @each $hue in $matHues {
+        // Get the color and the contrasting color
+        $color: map-get($palette, $hue);
+        $contrast: map-get($contrasts, $hue);
+
+        $name: #{$paletteName}-#{$hue};
+
+        @if ($color != null and $contrast != null) {
+          @include generate-color-classes($name, $color, $contrast);
+
+          @if (
+            $hue ==
+              500 and
+              $paletteName !=
+              'primary' and
+              $paletteName !=
+              'accent' and
+              $paletteName !=
+              'warn'
+          ) {
+            // Generate color classes
+            @include generate-color-classes($paletteName, $color, $contrast);
+          }
+
+          // Run the generator again for the selected default hue values for
+          // primary, accent and warn palettes
+          //
+          // We are doing this because the default hue value can be changed
+          // by the user when the Material theme being generated.
+          @if (
+            $paletteName ==
+              'primary' or
+              $paletteName ==
+              'accent' or
+              $paletteName ==
+              'warn'
+          ) {
+            // Get the color and the contrasting color for the selected
+            // default hue
+            $color: map-get($palette, 'default');
+            $contrast: map-get($palette, 'default-contrast');
+
+            // Generate color classes
+            @include generate-color-classes($paletteName, $color, $contrast);
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin colors-theme($theme) {
+  $background: map-get($theme, 'background');
+  $foreground: map-get($theme, 'foreground');
+
+  $color: map-get($background, 'background');
+  $contrast: map-get($foreground, 'base');
+
+  @include generate-common($color, $contrast);
+
+  @include generate-color-classes('theme', $color, $contrast);
+}

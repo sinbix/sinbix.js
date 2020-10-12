@@ -1,0 +1,49 @@
+// -----------------------------------------------------------------------------------------------------
+// @ Typography
+// -----------------------------------------------------------------------------------------------------
+@mixin mat-typography-core() {
+  html {
+    line-height: 1.4 !important;
+    letter-spacing: -0 !important;
+  }
+
+  html,
+  body {
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+  }
+
+  // Links
+  a {
+    &:not(:hover) {
+      text-decoration: none;
+    }
+  }
+
+  $config: mat-typography-config();
+
+  body {
+    @include mat-typography-level-to-styles($config, body-1);
+  }
+
+  h1 {
+    @include mat-typography-level-to-styles($config, headline);
+  }
+
+  h2 {
+    @include mat-typography-level-to-styles($config, title);
+  }
+
+  h3 {
+    @include mat-typography-level-to-styles($config, subheading-2);
+  }
+
+  h4 {
+    @include mat-typography-level-to-styles($config, subheading-1);
+  }
+
+  h5,
+  h6 {
+    @include mat-typography-level-to-styles($config, body-2);
+  }
+}

@@ -1,4 +1,4 @@
-@import '~@sinbix/ngx-ui-material/theming';
+@import '~@sinbix/angular-ui/theming';
 
 $main-primary: mat-palette(
   (
@@ -74,7 +74,7 @@ $main-dark: mat-palette(
 );
 
 body.dark-theme {
-  @include smat-theme(
+  @include mat-theme(
     $colors: (
       primary: $main-primary,
       accent: $main-accent,

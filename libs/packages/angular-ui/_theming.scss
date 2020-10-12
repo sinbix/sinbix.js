@@ -1,0 +1,26 @@
+@import '~@angular/material/theming';
+
+@import 'styles/components/mat-icon';
+
+@import 'styles/core/general';
+@import 'styles/core/layout';
+@import 'styles/core/mat-fix';
+@import 'styles/core/mat-fonts';
+@import 'styles/core/mat-typography';
+@import 'styles/core/normalize';
+
+@import 'styles/utils/breakpoints';
+@import 'styles/utils/layout';
+@import 'styles/utils/mat-theme';
+@import 'styles/utils/mat-typography';
+@import 'styles/utils/supports';
+
+@mixin sinbix-core() {
+  @include normalize-core();
+  @include general-core();
+  @include layout-core();
+  @include mat-fonts-core();
+  @include mat-core();
+  @include mat-fix-core();
+  @include mat-typography-core();
+}

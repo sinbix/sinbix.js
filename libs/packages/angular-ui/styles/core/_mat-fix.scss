@@ -1,0 +1,68 @@
+@mixin mat-fix-core() {
+  // Fix: "Icon button ripple radius is not correct on Edge & Safari"
+  .mat-icon-button {
+    .mat-button-ripple {
+      border-radius: 50%;
+    }
+  }
+
+  // Fix: "Smooth scrolling for iOS"
+  .mat-dialog-container {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  a,
+  button {
+    &.mat-button,
+    &.mat-raised-button,
+    &.mat-stroked-button,
+    &.mat-flat-button,
+    &.mat-icon-button,
+    &.mat-fab,
+    &.mat-mini-fab {
+      line-height: 1.25;
+      min-width: auto;
+    }
+
+    &.mat-button,
+    &.mat-raised-button,
+    &.mat-stroked-button {
+      border-radius: 0.25em;
+      padding: 0.5em 1em;
+    }
+
+    &.mat-mini-fab {
+      width: 2.5em;
+      height: 2.5em;
+    }
+
+    .mat-button-wrapper {
+      display: inline-block;
+    }
+  }
+
+  // Fix: Mat-card-image requires a bigger width than 100%
+  .mat-card-image {
+    max-width: none !important;
+  }
+
+  .mat-menu-content:not(:empty) {
+    padding: 0 !important;
+  }
+
+  .mat-form-field {
+    input,
+    textarea,
+    select {
+      &:-webkit-autofill {
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+          transition-delay: 99999s;
+          -webkit-transition-delay: 99999s;
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-@import '~@sinbix/ngx-ui-material/theming';
+@import '~@sinbix/angular-ui/theming';
 
 sinbix-nav-h-item-children {
   position: absolute;
@@ -37,7 +37,11 @@ sinbix-nav-h-item-children {
     padding: 1em;
   }
 
-  > .nav-children > sinbix-nav-h-item > sinbix-nav-link > .nav-link > .nav-child {
+  > .nav-children
+    > sinbix-nav-h-item
+    > sinbix-nav-link
+    > .nav-link
+    > .nav-child {
     flex-direction: row;
     display: flex;
     place-content: center space-between;

@@ -1,4 +1,4 @@
-@import '~@sinbix/ngx-ui-material/theming';
+@import '~@sinbix/angular-ui/theming';
 
 sinbix-nav-h-buttons {
   @include fx-layout(row, space-between center);
@@ -24,7 +24,7 @@ sinbix-nav-h-buttons {
     > .button-link.button-link-parent
     > .mat-button-wrapper
     > .arrow-down {
-    @include smat-icon-size(20px);
+    @include mat-icon-size(20px);
     right: 8px;
     position: absolute;
   }
