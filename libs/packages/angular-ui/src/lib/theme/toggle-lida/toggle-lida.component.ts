@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
+import { ThemeService, ThemeQuery } from '@sinbix/angular/theme';
+import { map } from 'rxjs/operators';
 import { TLightDarkTheme } from './toggle-lida.model';
 
 @Component({
@@ -12,13 +14,29 @@ export class ThemeToggleLidaComponent implements OnInit {
 
   @Input() color: ThemePalette;
 
-  @Input() isDark = false;
+  @Input() lightThemeId = 'light';
+
+  @Input() darkThemeId = 'dark';
 
   @Input() type: TLightDarkTheme = 'slide';
 
-  ngOnInit(): void {}
+  isDark$ = this.themeQuery
+  .selectActiveId()
+  .pipe(map((themeId) => themeId === this.darkThemeId));
 
-  onToggle() {
-    this.toggleEvent.emit(!this.isDark);
+  constructor(
+    private themeService: ThemeService,
+    private themeQuery: ThemeQuery
+  ) {
+    
   }
+
+  ngOnInit(): void {
+  }
+
+  onToggle(isDark) {
+    this.themeService.setTheme(isDark ? this.darkThemeId : this.lightThemeId);
+  }
+
+
 }

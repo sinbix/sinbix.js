@@ -1,0 +1,14 @@
+@import '~@sinbix/angular-ui/theming';
+
+:host {
+  > .toggle-wrap {
+    flex-direction: row;
+    display: flex;
+    place-content: center start;
+    align-items: center;
+  }
+
+  > .toggle-wrap > .toggle {
+    margin: 0 4px;
+  }
+}
