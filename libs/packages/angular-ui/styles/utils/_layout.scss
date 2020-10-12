@@ -5,8 +5,8 @@
   $axis-y: null;
 
   @if type-of($gap) == list {
-    $axis-x: nth($gap, 1);
-    $axis-y: nth($gap, 2);
+    $axis-x: nth($gap, 2);
+    $axis-y: nth($gap, 1);
   } @else {
     $axis-x: $gap;
     $axis-y: $gap;

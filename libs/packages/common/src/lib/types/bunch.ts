@@ -1,5 +1,5 @@
-export type TBunch<T> = T | T[];
+export type Bunch<T> = T | T[];
 
-export interface IBunchCallback<T> {
+export interface BunchCallback<T> {
   (bunchEntity: T): any;
 }

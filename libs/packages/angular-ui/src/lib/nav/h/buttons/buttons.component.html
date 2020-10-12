@@ -1,5 +1,11 @@
 <ng-container *ngFor="let item of items">
-  <sinbix-nav-h-item [item]="item" [activeChild]="activeChild">
+  <sinbix-nav-h-item
+    [item]="item"
+    [activeParent]="activeParent"
+    [activeChild]="activeChild"
+    [containerWidth]="width$ | async"
+    [close]="close$ | async"
+  >
     <button
       mat-button
       class="button-link"

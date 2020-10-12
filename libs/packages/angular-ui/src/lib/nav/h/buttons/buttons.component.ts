@@ -1,5 +1,8 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
-import { TCssClasses, INavItem } from '@sinbix/common/types';
+import { NavigationEnd, Router } from '@angular/router';
+import { ScreenQuery } from '@sinbix/angular/screen';
+import { CssClasses, NavItem } from '@sinbix/common/types';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'sinbix-nav-h-buttons',
@@ -8,11 +11,17 @@ import { TCssClasses, INavItem } from '@sinbix/common/types';
   encapsulation: ViewEncapsulation.None,
 })
 export class NavHButtonsComponent implements OnInit {
-  @Input() items: INavItem[];
-  @Input() activeParent: TCssClasses;
+  @Input() items: NavItem[];
+  @Input() activeParent: CssClasses;
   @Input() activeChild: string | string[];
 
-  constructor() {}
+  width$ = this.screenQuery.select('width');
+
+  close$ = this.router.events.pipe(
+    filter((event) => event instanceof NavigationEnd)
+  );
+
+  constructor(private screenQuery: ScreenQuery, private router: Router) {}
 
   ngOnInit(): void {}
 }

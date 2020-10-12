@@ -1,3 +1,3 @@
-import { TBunch } from './bunch';
+import { Bunch } from './bunch';
 
-export type TCssClasses = TBunch<string>;
+export type CssClasses = Bunch<string>;

@@ -1,10 +1,7 @@
 import * as _ from 'lodash-es';
-import { IBunchCallback, TBunch } from '../types';
+import { BunchCallback, Bunch } from '../types';
 
-export function bunchHandler(
-  bunch: TBunch<any>,
-  callback: IBunchCallback<any>
-) {
+export function bunchHandler(bunch: Bunch<any>, callback: BunchCallback<any>) {
   if (_.isArray(bunch)) {
     bunch.map((entiry) => {
       callback(entiry);

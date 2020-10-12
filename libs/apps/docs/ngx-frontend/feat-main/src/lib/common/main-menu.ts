@@ -1,4 +1,4 @@
-import { INavItem } from '@sinbix/common/types';
+import { NavItem } from '@sinbix/common/types';
 
 // export const mainMenu: INavItem[] = [
 //   {
@@ -13,7 +13,7 @@ import { INavItem } from '@sinbix/common/types';
 //   }
 // ];
 
-export const MAIN_MENU: INavItem[] = [
+export const MAIN_MENU: NavItem[] = [
   {
     title: 'Компонеты',
     url: '/components',

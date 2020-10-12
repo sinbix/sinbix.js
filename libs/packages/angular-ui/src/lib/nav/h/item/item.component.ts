@@ -8,15 +8,11 @@ import {
   HostListener,
   ViewEncapsulation,
   Renderer2,
-  OnDestroy,
 } from '@angular/core';
 
-import { NavigationEnd, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
-import { Subject } from 'rxjs';
-import { filter, takeUntil } from 'rxjs/operators';
-
-import { TCssClasses, INavItem } from '@sinbix/common/types';
+import { CssClasses, NavItem } from '@sinbix/common/types';
 import { Point, PrefDir } from '../h.model';
 
 @Component({
@@ -25,46 +21,32 @@ import { Point, PrefDir } from '../h.model';
   styleUrls: ['./item.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class NavHItemComponent implements OnInit, OnDestroy {
-  @Input() item: INavItem;
-  @Input() activeParent: TCssClasses;
-  @Input() activeChild: TCssClasses;
+export class NavHItemComponent implements OnInit {
+  @Input() item: NavItem;
+  @Input() activeParent: CssClasses;
+  @Input() activeChild: CssClasses;
   @Input() level = 0;
   @Input() prefDir: PrefDir = PrefDir.RIGHT;
+  @Input() containerWidth = 0;
+  @Input() set close(close: any) {
+    if (close) {
+      this.mouseleave();
+    }
+  }
 
   @ViewChild('children', { read: ElementRef }) childrenRef: ElementRef;
 
-  @HostBinding('class.nav-root') root;
-
   pivot: Point;
-
-  private unsubscribeAll = new Subject();
 
   constructor(
     private elRef: ElementRef<HTMLElement>,
-    private renderer: Renderer2,
-    private router: Router
+    private renderer: Renderer2
   ) {}
 
-  ngOnInit(): void {
-    this.root = !this.level;
-    this.router.events
-      .pipe(
-        filter((event) => event instanceof NavigationEnd),
-        takeUntil(this.unsubscribeAll)
-      )
-      .subscribe((event: NavigationEnd) => {
-        this.mouseleave();
-      });
-  }
+  ngOnInit(): void {}
 
-  ngOnDestroy(): void {
-    this.unsubscribeAll.next();
-    this.unsubscribeAll.complete();
-  }
-
-  @HostListener('mouseenter', ['$event'])
-  mouseenter(event: MouseEvent) {
+  @HostListener('mouseenter')
+  mouseenter() {
     if (this.item.children?.length) {
       const rect = this.elRef.nativeElement.getBoundingClientRect();
 

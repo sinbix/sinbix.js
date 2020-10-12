@@ -1,7 +1,7 @@
 @import '~@sinbix/angular-ui/theming';
 
 sinbix-nav-h-buttons {
-  @include fx-layout(row, space-between center);
+  @include fx-layout(row wrap, space-around center, 16px 0);
 
   > sinbix-nav-h-item
     > sinbix-nav-link

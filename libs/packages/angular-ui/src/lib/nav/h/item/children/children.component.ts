@@ -7,15 +7,11 @@ import {
   HostBinding,
   ElementRef,
   ViewEncapsulation,
-  OnDestroy,
 } from '@angular/core';
 
 import { trigger, transition, useAnimation } from '@angular/animations';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
 
-import { TCssClasses, INavItem } from '@sinbix/common/types';
-import { ScreenQuery } from '@sinbix/angular/screen';
+import { CssClasses, NavItem } from '@sinbix/common/types';
 import { fadeInRight, fadeOutLeft } from '@sinbix/angular-ui/animations';
 
 import { Point, PrefDir } from '../../h.model';
@@ -40,44 +36,36 @@ import { Point, PrefDir } from '../../h.model';
     ]),
   ],
 })
-export class NavHChildrenComponent implements OnInit, OnDestroy {
-  @Input() items: INavItem[];
-  @Input() active: TCssClasses;
-  @Input() level: number;
-  @Input() prefDir: PrefDir;
-
+export class NavHChildrenComponent implements OnInit {
   @HostBinding('style') style = {};
 
-  @HostBinding('@animate') animate = true;
+  @HostBinding('@animate') animate;
 
-  @HostBinding('class.lock-events') lockEvents = false;
+  @HostBinding('class.lock-events') lockEvents;
 
+  @Input() items: NavItem[];
+  @Input() active: CssClasses;
+  @Input() level: number;
+  @Input() prefDir: PrefDir;
   @Input() pivot: Point;
 
-  private unsubscribeAll = new Subject();
+  @Input() set containerWidth(width: number) {
+    this.checkDir(width);
+    this.style = {
+      left: this.calcOffset(PrefDir.RIGHT),
+      right: this.calcOffset(PrefDir.LEFT),
+    };
 
-  constructor(
-    private elRef: ElementRef<HTMLElement>,
-    private screenQuery: ScreenQuery
-  ) {}
-
-  ngOnInit(): void {
-    this.screenQuery
-      .select('width')
-      .pipe(takeUntil(this.unsubscribeAll))
-      .subscribe((width) => {
-        this.checkDir(width);
-        this.style = {
-          left: this.calcOffset(PrefDir.RIGHT),
-          right: this.calcOffset(PrefDir.LEFT),
-        };
-      });
+    this._containerWidth = width;
   }
-
-  ngOnDestroy(): void {
-    this.unsubscribeAll.next();
-    this.unsubscribeAll.complete();
+  get containerWidth() {
+    return this._containerWidth;
   }
+  private _containerWidth: number;
+
+  constructor(private elRef: ElementRef<HTMLElement>) {}
+
+  ngOnInit(): void {}
 
   private calcOffset(prefDir: PrefDir) {
     const offset = this.level > 1 ? 100 : 0;

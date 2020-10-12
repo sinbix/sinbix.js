@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 import { bunchHandler } from '@sinbix/common/utils';
 import { NavigationService } from '@sinbix/angular/navigation';
-import { TCssClasses } from '@sinbix/common/types';
+import { CssClasses } from '@sinbix/common/types';
 
 @Component({
   selector: 'sinbix-nav-link',
@@ -26,7 +26,7 @@ export class NavLinkComponent implements OnInit {
   @Input() exactMatch: boolean;
   @Input() function: any;
 
-  @Input() set active(active: TCssClasses) {
+  @Input() set active(active: CssClasses) {
     if (active) {
       this._active = active;
     } else {
@@ -36,7 +36,7 @@ export class NavLinkComponent implements OnInit {
   get active() {
     return this._active;
   }
-  private _active: TCssClasses = [];
+  private _active: CssClasses = [];
 
   constructor(
     private renderer: Renderer2,

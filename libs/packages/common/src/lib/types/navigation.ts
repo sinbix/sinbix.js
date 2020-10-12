@@ -1,4 +1,4 @@
-export interface INavItem {
+export interface NavItem {
   title: string;
   icon?: string;
   badge?: {
@@ -11,5 +11,5 @@ export interface INavItem {
   externalUrl?: boolean;
   openInNewTab?: boolean;
   function?: any;
-  children?: INavItem[];
+  children?: NavItem[];
 }
