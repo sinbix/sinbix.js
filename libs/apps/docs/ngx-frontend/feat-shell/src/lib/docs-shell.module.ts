@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DataAccessScreenModule } from '@sinbix/ngx-data-access-akita/screen';
+import { DataAccessScreenModule } from '@sinbix/angular/screen';
 import { DataAccessThemeModule } from '@sinbix/ngx-data-access-akita/theme';
 
 import { THEMES } from './common/themes';

@@ -1,0 +1,22 @@
+:host {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  display: block;
+
+  > .nav-link {
+    white-space: nowrap;
+    display: block;
+  }
+
+  > .nav-link:hover {
+    cursor: pointer;
+  }
+
+  &.-decoration-none > .nav-link,
+  &.-decoration-none > .nav-link:hover,
+  &.-decoration-none > .nav-link:visited,
+  &.-decoration-none > .nav-link:active {
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,46 @@
+@import '~@sinbix/ngx-ui-material/theming';
+
+sinbix-nav-h-item-children {
+  position: absolute;
+  z-index: 1;
+  min-width: 250px;
+
+  &.lock-events {
+    pointer-events: none;
+  }
+
+  > .nav-children {
+    @include mat-elevation(3);
+
+    border-radius: 8px;
+  }
+
+  > .nav-children > .nav-h-child > sinbix-nav-link {
+    overflow: hidden;
+  }
+
+  > .nav-children > .nav-h-child:first-child > sinbix-nav-link {
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+
+  > .nav-children > .nav-h-child:last-child > sinbix-nav-link {
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+
+  > .nav-children > sinbix-nav-h-item > sinbix-nav-h-item-children {
+    top: 0;
+  }
+
+  > .nav-children > sinbix-nav-h-item > sinbix-nav-link > .nav-link {
+    padding: 1em;
+  }
+
+  > .nav-children > sinbix-nav-h-item > sinbix-nav-link > .nav-link > .nav-child {
+    flex-direction: row;
+    display: flex;
+    place-content: center space-between;
+    align-items: center;
+  }
+}

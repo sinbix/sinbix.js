@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'sui-animate',
+  selector: 'sinbix-animate',
   templateUrl: './animate.component.html',
   styleUrls: ['./animate.component.scss'],
 })

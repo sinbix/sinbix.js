@@ -1,0 +1,36 @@
+<ng-container *ngIf="!item.hidden">
+  <ng-container
+    *ngTemplateOutlet="item.children?.length ? parentItem : aloneItem"
+  ></ng-container>
+</ng-container>
+
+<ng-template #parentItem>
+  <ng-container *ngTemplateOutlet="content"></ng-container>
+  <sinbix-nav-h-item-children
+    #children
+    *ngIf="pivot"
+    [pivot]="pivot"
+    [prefDir]="prefDir"
+    [level]="level + 1"
+    [items]="item.children"
+    [active]="activeChild"
+  ></sinbix-nav-h-item-children>
+</ng-template>
+
+<ng-template #aloneItem>
+  <ng-container *ngTemplateOutlet="content"></ng-container>
+</ng-template>
+
+<ng-template #content>
+  <sinbix-nav-link
+    class="-decoration-none"
+    [url]="item.url"
+    [active]="level ? activeChild : activeParent"
+    [exactMatch]="item.exactMatch"
+    [externalUrl]="item.externalUrl"
+    [openInNewTab]="item.openInNewTab"
+    [function]="item.function"
+  >
+    <ng-content></ng-content>
+  </sinbix-nav-link>
+</ng-template>

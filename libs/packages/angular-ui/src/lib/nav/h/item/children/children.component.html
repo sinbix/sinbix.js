@@ -1,0 +1,18 @@
+<div class="nav-children _theme">
+  <ng-container *ngFor="let item of items">
+    <sinbix-nav-h-item
+      class="nav-h-child"
+      [prefDir]="prefDir"
+      [item]="item"
+      [activeChild]="active"
+      [level]="level"
+    >
+      <div class="nav-child">
+        <div class="nav-link-content">{{ item.title }}</div>
+        <mat-icon class="nav-children-arrow" *ngIf="item.children?.length">
+          arrow_drop_down
+        </mat-icon>
+      </div>
+    </sinbix-nav-h-item>
+  </ng-container>
+</div>
